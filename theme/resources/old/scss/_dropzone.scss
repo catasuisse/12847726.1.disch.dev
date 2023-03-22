@@ -1,0 +1,376 @@
+.dd-dz-template {
+    display: none;
+}
+
+.dropzone {
+    border-color: dd-f-color('default');
+    border-radius: 0;
+    border-style: solid;
+    border-width: $dd-default-border-width;
+    color: dd-f-color('default');
+    font-size: .75rem;
+    letter-spacing: $dd-default-letter-spacing;
+    min-height: 12.875rem;
+    padding: dd-f-space-x('* .75');
+    position: relative;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    @include dd-m-breakpoint-up('sm') {
+        padding: dd-f-space-x();
+    }
+
+    @include dd-m-breakpoint-up('md') {
+        font-size: .625rem;
+    }
+
+    @include dd-m-breakpoint-up('xl') {
+        font-size: .5rem;
+    }
+
+    &:not(.dd-preview-is-hovered) {
+        &:active,
+        &.dz-drag-hover {
+            border-color: dd-f-color('primary');
+            color: dd-f-color('primary');
+        }
+    }
+
+    &.dz-clickable {
+        * {
+            cursor: pointer;
+        }
+    }
+
+    &.dz-drag-hover {
+        .dz-message {
+            opacity: 1;
+        }
+    }
+
+    &.dz-started {
+        padding-bottom: calc(#{$dd-default-icon-wrapper-size} * 2.5 * .75 + #{dd-f-space-x('* 1.5')});
+
+        @include dd-m-breakpoint-up('sm') {
+            padding-bottom: calc(#{$dd-default-icon-wrapper-size} * 2.5 * .75 + #{dd-f-space-x('* 3')});
+        }
+
+        .dz-message {
+            bottom: 0;
+            display: flex;
+            top: auto;
+            transform: translate(-50%, 0);
+
+            svg {
+                height: $dd-default-icon-wrapper-size * 2.5 * .75;
+                width: $dd-default-icon-wrapper-size * 2.5 * .75;
+            }
+        }
+    }
+
+    .dz-message {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        left: 50%;
+        margin: 0;
+        padding-bottom: dd-f-space-x();
+        padding-top: dd-f-space-x();
+        position: absolute;
+        top: 50%;
+        transform:
+            translate(-50%, -50%);
+        width: 100%;
+
+        @include dd-m-breakpoint-up('sm') {
+            padding-bottom: dd-f-space-x('* 2');
+            padding-top: dd-f-space-x('* 2');
+        }
+
+        svg {
+            height: $dd-default-icon-wrapper-size * 2.5 * 1.5;
+            width: $dd-default-icon-wrapper-size * 2.5 * 1.5;
+        }
+    }
+
+    .dz-preview {
+        -ms-flex: 0 0 50%;
+        flex: 0 0 50%;
+        margin: 0;
+        max-width: 50%;
+        padding: dd-f-space-x('* .75');
+        width: 100%;
+
+        @include dd-m-breakpoint-up('sm') {
+            padding: dd-f-space-x();
+        }
+
+        @include dd-m-breakpoint-up('md') {
+            -ms-flex: 0 0 33.333333%;
+            flex: 0 0 33.333333%;
+            max-width: 33.333333%;
+        }
+
+        @include dd-m-breakpoint-up('xl') {
+            -ms-flex: 0 0 25%;
+            flex: 0 0 25%;
+            max-width: 25%;
+        }
+
+        &:hover {
+            .dz-image {
+                img {
+                    filter: none;
+                    transform: none;
+                }
+            }
+        }
+
+        &.dz-file-preview {
+            .dz-image {
+                background-color: dd-f-color('background');
+                background-image: none;
+            }
+        }
+
+        &.dz-error {
+            .dz-details {
+                * {
+                    display: none;
+                }
+            }
+
+            .dz-error-mark {
+                animation: slide-in 2.5s cubic-bezier(.77, 0, .175, 1);
+                background: rgba(dd-f-color('danger'), .95);
+            }
+        }
+
+        &.dz-image-preview {
+            background-color: transparent;
+
+            &:hover {
+                .dz-details {
+                    opacity: 0;
+                }
+            }
+
+            .dz-details {
+                transition: none;
+
+                @include dd-m-breakpoint-up('xl') {
+                    transition:
+                        opacity $dd-default-transition-duration $dd-default-transition-timing-function;
+                    // The placement is mandatory!
+                }
+
+            }
+
+            .dz-image {
+                @include dd-m-breakpoint-up('xl') {
+                    transition:
+                        filter $dd-default-transition-duration $dd-default-transition-timing-function;
+                    // The placement is mandatory!
+                }
+            }
+
+            > {
+                * {
+                    &:hover {
+                        .dz-details {
+                            @include dd-m-breakpoint-up('xl') {
+                                opacity: 1;
+                            }
+                        }
+
+                        .dz-image {
+                            img {
+                                @include dd-m-breakpoint-up('xl') {
+                                    filter:
+                                        grayscale(1);
+                                }
+                            }
+                        }
+                    }
+
+                    &:active {
+                        .dz-details {
+                            @include dd-m-breakpoint-down('xl') {
+                                opacity: 1;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        &.dz-success {
+            .dz-success-mark {
+                animation: passing-through 2.5s cubic-bezier(.77, 0, .175, 1);
+                background: rgba(dd-f-color('success'), .95);
+            }
+        }
+
+        .dz-details {
+            background-color: rgba(dd-f-color('default'), .95);
+            color: dd-f-color('background');
+            display: flex;
+            flex-direction: column;
+            font-size: inherit;
+            height: 100%;
+            justify-content: center;
+            letter-spacing: $dd-default-letter-spacing;
+            line-height: 1.5;
+            max-width: none;
+            min-width: 0;
+            padding: 0;
+            width: 100%;
+
+            .dz-filename,
+            .dz-size {
+                padding: 0 dd-f-space-x('* .75');
+
+                @include dd-m-breakpoint-up('sm') {
+                    padding-left: dd-f-space-x('* 1.5');
+                    padding-right: dd-f-space-x('* 1.5');
+                }
+
+                span {
+                    background-color: transparent;
+                    border-radius: 0;
+                }
+            }
+
+            .dz-filename {
+                font-weight: $dd-default-font-weight-semibold;
+
+                &:not(:hover) {
+                    span {
+                        border: none;
+                    }
+                }
+
+                &:hover {
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+
+                    span {
+                        background-color: transparent;
+                        border: none;
+                    }
+                }
+
+                span {
+                    padding: 0;
+                }
+            }
+
+            .dz-size {
+                font-size: .75em;
+                letter-spacing: $dd-default-letter-spacing;
+                margin-bottom: 0;
+                opacity: .5;
+
+                strong {
+                    font-weight: inherit;
+                }
+            }
+        }
+
+        .dz-image {
+            background-color: dd-f-color('background');
+            border-radius: 0;
+            box-shadow: $dd-default-box-shadow;
+            height: auto;
+            width: 100%;
+
+            &::before {
+                content: '';
+                display: block;
+                padding-top: 100%;
+            }
+
+            img {
+                height: auto;
+                left: 0;
+                position: absolute;
+                top: 0;
+                width: 100%;
+            }
+        }
+
+        .dz-error-mark,
+        .dz-success-mark {
+            border-radius: 999999px;
+            color: dd-f-color('background');
+            margin-left: -$dd-default-icon-wrapper-size * 2.5 * .75 * .5;
+            margin-top: -$dd-default-icon-wrapper-size * 2.5 * .75 * .5;
+            transition:
+                opacity $dd-default-transition-duration $dd-default-transition-timing-function;
+
+            svg {
+                height: $dd-default-icon-wrapper-size * 2.5 * .75;
+                width: $dd-default-icon-wrapper-size * 2.5 * .75;
+            }
+        }
+
+        .dz-error-message {
+            pointer-events: none;
+        }
+
+        .dz-progress {
+            background: rgba(dd-f-color('primary'), .95);
+            border: none;
+            border-radius: 999999px;
+            height: $dd-default-border-width * 2.5;
+            left: 0;
+            right: 0;
+            margin: 0 dd-f-space-x('* .75');
+            transform:
+                translate(0, -50%);
+
+            @include dd-m-breakpoint-up('sm') {
+                margin-left: dd-f-space-x('* 1.5');
+                margin-right: dd-f-space-x('* 1.5');
+            }
+
+            .dz-upload {
+                border-radius: 0 999999px 999999px 0;
+            }
+        }
+
+        > {
+            * {
+                border-radius: $dd-default-border-radius;
+                box-shadow: $dd-default-box-shadow;
+                overflow: hidden;
+                position: relative;
+
+                &:hover {
+                    .dz-error-mark,
+                    .dz-success-mark {
+                        @include dd-m-breakpoint-up('xl') {
+                            opacity: 0;
+                        }
+                    }
+                }
+
+                &:active {
+                    box-shadow: none;
+
+                    .dz-details {
+                        background-color: rgba(dd-f-color('danger'), .95);
+                    }
+
+                    .dz-error-mark,
+                    .dz-success-mark {
+                        opacity: 0;
+                        transition: none;
+                    }
+                }
+            }
+        }
+    }
+}

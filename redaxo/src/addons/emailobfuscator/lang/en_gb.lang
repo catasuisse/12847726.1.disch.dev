@@ -1,0 +1,19 @@
+emailobfuscator_title = E-mail obfuscation
+
+emailobfuscator_config = Configuration
+emailobfuscator_config_saved = Configuration has been saved.
+emailobfuscator_config_methods = Methods
+emailobfuscator_config_select_method = Protection method
+emailobfuscator_config_select_method_css = CSS method without JavaScript (removes link and transforms address into name[at]domain.tld)
+emailobfuscator_config_select_method_rot13 = ROT13 JavaScript encryption
+emailobfuscator_config_select_method_rot13_css = ROT13 JavaScript encryption with CSS method as fallback, in case JavaScript is deactivated
+emailobfuscator_config_select_method_unicorn = ROT Unicorn-Markup (standard, needs JQuery) 
+emailobfuscator_config_assets = Assets
+emailobfuscator_config_load_assets = Load scripts and styles
+emailobfuscator_config_assets_js = Autoload JavaScript
+emailobfuscator_config_assets_css = Autoload CSS
+emailobfuscator_config_assets_note = In case you do not want assets to autoload, you can include them in your template. You can also embed the styles and scripts provided by the addon into your existing sources, but don't forget to update them in case the AddOn is updated with new assets.<br>Find detailed information and code snippets in the <a href="{0}">AddOn README</a>.
+emailobfuscator_config_whitelist = Whitelist
+emailobfuscator_config_articles = Whitelist articles
+emailobfuscator_config_templates = Whitelist templates
+emailobfuscator_config_mailto_only = Only e-mail adresses with 'mailto:'

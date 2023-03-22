@@ -1,0 +1,12 @@
+package: dd_friends
+version: '1.0.0'
+author: Disch Development
+supportpage: https://www.dischdev.com
+
+page:
+    title: 'Freunde'
+    perm: dd[manual]
+    block: manual
+    prio: 4
+    icon: rex-icon rex-icon-user
+    pjax: true

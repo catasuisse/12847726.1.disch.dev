@@ -1,0 +1,12 @@
+package: dd_clients
+version: '1.0.0'
+author: Disch Development
+supportpage: https://www.dischdev.com
+
+page:
+    title: 'Kunden'
+    perm: dd[manual]
+    block: manual
+    prio: 3
+    icon: rex-icon rex-icon-user
+    pjax: true

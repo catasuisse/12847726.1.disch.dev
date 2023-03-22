@@ -1,0 +1,19 @@
+@function dd-f-breakpoint($breakpoint: false) {
+    @if map-has-key($dd-breakpoints, $breakpoint) {
+        @return map-get($dd-breakpoints, $breakpoint);
+    }
+
+    @return false;
+}
+
+@function dd-f-color($color: false) {
+    @if map-has-key($dd-colors, $color) {
+        @return map-get($dd-colors, $color);
+    }
+
+    @return false;
+}
+
+@function dd-f-url-friendly-color($color) {
+    @return '%23' + str-slice('#{$color}', 2, -1);
+}

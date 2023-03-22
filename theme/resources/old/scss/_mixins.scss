@@ -1,0 +1,77 @@
+@mixin dd-m-breakpoint-down($breakpoint: false, $force-output: false) {
+    @if map-has-key($dd-breakpoints, $breakpoint) {
+        $breakpoint: map-get($dd-breakpoints, $breakpoint) - 1;
+    }
+
+    @if $breakpoint and $breakpoint > 0 {
+        @media(max-width: $breakpoint) {
+            @content;
+        }
+    } @else if $force-output {
+        @content;
+    }
+}
+
+/*
+––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+
+@mixin dd-m-breakpoint-between($breakpoint-up: false, $breakpoint-down: false, $force-output: false) {
+    @if map-has-key($dd-breakpoints, $breakpoint-down) {
+        $breakpoint-down: map-get($dd-breakpoints, $breakpoint-down) - 1;
+    }
+
+    @if map-has-key($dd-breakpoints, $breakpoint-up) {
+        $breakpoint-up: map-get($dd-breakpoints, $breakpoint-up) - 1;
+    }
+
+    @if $breakpoint-down and $breakpoint-down > 0 and $breakpoint-up and $breakpoint-up > 0 {
+        @media(min-width: $breakpoint-up) and (max-width: $breakpoint-down) {
+            @content;
+        }
+    } @else if $breakpoint-down and $breakpoint-down > 0 {
+        @media(max-width: $breakpoint-down) {
+            @content;
+        }
+    } @else if $breakpoint-up and $breakpoint-up > 0 {
+        @media(min-width: $breakpoint-up) {
+            @content;
+        }
+    } @else if ($breakpoint-up and $breakpoint-up == 0) or $force-output {
+        @content;
+    }
+}
+
+/*
+––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+
+@mixin dd-m-breakpoint-up($breakpoint: false, $force-output: false) {
+    @if map-has-key($dd-breakpoints, $breakpoint) {
+        $breakpoint: map-get($dd-breakpoints, $breakpoint);
+    }
+
+    @if $breakpoint and $breakpoint > 0 {
+        @media(min-width: $breakpoint) {
+            @content;
+        }
+    } @else if ($breakpoint and $breakpoint == 0) or $force-output {
+        @content;
+    }
+}
+
+/*
+––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+
+@mixin dd-m-orientation($orientation: false) {
+    @if $orientation == 'portrait' {
+        @media(orientation: portrait) {
+            @content;
+        }
+    } @else {
+        @media(orientation: landscape) {
+            @content;
+        }
+    }
+}

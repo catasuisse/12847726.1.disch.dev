@@ -1,0 +1,22 @@
+yform_usability.search_in_all = in allen
+yform_usability.partial = HTML-Partial
+
+yform_usability.tab_start = START: vor das erste sprachabhängige Feld setzen
+yform_usability.tab_break = BREAK: dient dazu um verschiedene Felder von Sprachen zu trennen
+yform_usability.tab_end = END: nach dem letzten sprachabhängigen Feld setzen
+yform_usability.lang_tabs_description = Erstellt Tabs für alle Sprachen und ermöglicht somit das gruppieren von Sprachfeldern
+yform_usability.table_config = Tabellen-Einstellungen
+yform_usability.all_tables = Alle Tabellen
+yform_usability.addon_settings = Addon-Einstellungen
+yform_usability.search = Yform-Suche
+yform_usability.use_inline_search = Inline-Suche verwenden
+
+yform_label.online_status = Online/Offline Status anzeigen
+yform_label.sorting = Sortierung aktiv
+yform_label.duplication = Duplizieren von Datensätzen
+
+yform_usability_action.duplicate = duplizieren
+
+yform_usability.help_prio = <b>Sortierung per Drag&Drop</b>: die Tabelle benötigt ein Feld vom Typ <code>prio</code>. Außerdem bitte in den Eigenschaften der Tabelle die Sortierung von <code>id</code> auf <code>prio</code> ändern.
+yform_usability.help_status = <b>Datensätze per Klick online / offline schalten</b>: die Tabelle benötigt ein select Feld mit dem Feldnamen <code>status</code>. Werte sind frei wählbar (Bsp.: <code>Inaktiv=0,Aktiv=1,Pending=2,zu Erledigen=55</code>)!
+yform_usability.help_open_readme = Readme öffnen

@@ -1,0 +1,5 @@
+/* CSS für AutoResize-Modus */
+.CodeMirror {
+  height: auto;
+  min-height: auto;
+}

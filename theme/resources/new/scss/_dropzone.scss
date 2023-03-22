@@ -1,0 +1,339 @@
+.dd-dz-template {
+    display: none;
+}
+
+.dropzone {
+    border-color: dd-f-color('foreground');
+    border-radius: 0;
+    border-style: solid;
+    border-width: $dd-border-width * 2;
+    color: dd-f-color('foreground');
+    font-size: .625rem;
+    letter-spacing: $dd-letter-spacing;
+    min-height: 18rem;
+    padding: .75rem;
+    position: relative;
+    text-transform: uppercase;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    .dz-message {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        left: 50%;
+        margin: 0;
+        padding-bottom: 1.5rem;
+        padding-top: 1.5rem;
+        position: absolute;
+        top: 50%;
+        transform:
+            translate(-50%, -50%);
+        width: 100%;
+
+        svg {
+            height: 6rem;
+            width: 6rem;
+        }
+    }
+
+    .dz-preview {
+        -ms-flex: 0 0 50%;
+        flex: 0 0 50%;
+        margin: 0;
+        max-width: 50%;
+        padding: .75rem;
+        width: 100%;
+
+        @media(min-width: 768px) {
+            -ms-flex: 0 0 33.333333%;
+            flex: 0 0 33.333333%;
+            max-width: 33.333333%;
+        }
+
+        @media(min-width: 1200px) {
+            -ms-flex: 0 0 25%;
+            flex: 0 0 25%;
+            max-width: 25%;
+        }
+
+        &:hover {
+            .dz-image {
+                img {
+                    filter: none;
+                    transform: none;
+                }
+            }
+        }
+
+        > {
+            * {
+                border-radius: $dd-border-width * 4;
+                box-shadow: 0 0 .5rem rgba(0, 0, 0, .125);
+                overflow: hidden;
+                position: relative;
+
+                &:hover {
+                    .dz-error-mark,
+                    .dz-success-mark {
+                        @media(max-width: 1200px) {
+                            opacity: 0;
+                        }
+                    }
+                }
+
+                &:active {
+                    box-shadow: none;
+
+                    .dz-details {
+                        background-color: rgba(dd-f-color('danger'), .95);
+                    }
+
+                    .dz-error-mark,
+                    .dz-success-mark {
+                        opacity: 0;
+                        transition: none;
+                    }
+                }
+            }
+        }
+
+        .dz-details {
+            background-color: rgba(darken(dd-f-color('accent'), 12.5%), .95);
+            color: dd-f-color('foreground');
+            display: flex;
+            flex-direction: column;
+            font-size: inherit;
+            height: 100%;
+            justify-content: center;
+            letter-spacing: $dd-letter-spacing;
+            line-height: 1.5;
+            max-width: none;
+            min-width: 0;
+            padding: 0;
+            width: 100%;
+
+            .dz-filename,
+            .dz-size {
+                padding: 0 .75rem;
+
+                span {
+                    background-color: transparent;
+                    border-radius: 0;
+                }
+            }
+
+            .dz-filename {
+                font-weight: inherit;
+
+                &:not(:hover) {
+                    span {
+                        border: none;
+                    }
+                }
+
+                &:hover {
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+
+                    span {
+                        background-color: transparent;
+                        border: none;
+                    }
+                }
+
+                span {
+                    padding: 0;
+                }
+            }
+
+            .dz-size {
+                font-size: .875em;
+                letter-spacing: $dd-letter-spacing;
+                margin-bottom: 0;
+                opacity: .5;
+
+                strong {
+                    font-weight: inherit;
+                }
+            }
+        }
+
+        .dz-image {
+            background-color: dd-f-color('background');
+            border-radius: 0;
+            box-shadow: 0 0 .5rem rgba(0, 0, 0, .125);
+            height: auto;
+            width: 100%;
+
+            &::before {
+                content: '';
+                display: block;
+                padding-top: 100%;
+            }
+
+            img {
+                height: auto;
+                left: 0;
+                position: absolute;
+                top: 0;
+                width: 100%;
+            }
+        }
+
+        .dz-error-mark,
+        .dz-success-mark {
+            border-radius: 999999px;
+            color: dd-f-color('background');
+            margin-left: -1.5rem;
+            margin-top: -1.5rem;
+            transition:
+                opacity .125s ease;
+
+            svg {
+                height: 3rem;
+                width: 3rem;
+            }
+        }
+
+        .dz-error-message {
+            pointer-events: none;
+        }
+
+        .dz-progress {
+            background: rgba(dd-f-color('foreground'), .25);
+            border: none;
+            border-radius: 999999px;
+            height: $dd-border-width * 4;
+            left: 0;
+            right: 0;
+            margin: 0 1.5rem;
+            transform:
+                translate(0, -50%);
+
+            .dz-upload {
+                border-radius: 0 999999px 999999px 0;
+            }
+        }
+
+        &.dz-file-preview {
+            .dz-image {
+                background-color: dd-f-color('background');
+                background-image: none;
+            }
+        }
+
+        &.dz-error {
+            .dz-details {
+                * {
+                    display: none;
+                }
+            }
+
+            .dz-error-mark {
+                background: rgba(dd-f-color('danger'), .95);
+            }
+        }
+
+        &.dz-image-preview {
+            background-color: transparent;
+
+            &:hover {
+                .dz-details {
+                    opacity: 0;
+                }
+            }
+
+            > {
+                * {
+                    &:hover {
+                        .dz-details {
+                            @media(min-width: 1200px) {
+                                opacity: 1;
+                            }
+                        }
+
+                        .dz-image {
+                            img {
+                                @media(min-width: 1200px) {
+                                    filter:
+                                        grayscale(1);
+                                }
+                            }
+                        }
+                    }
+
+                    &:active {
+                        .dz-details {
+                            @media(max-width: 1199px) {
+                                opacity: 1;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .dz-details {
+                transition: none;
+
+                @media(min-width: 1200px) {
+                    transition:
+                        opacity .125s ease;
+                    // The placement is mandatory!
+                }
+            }
+
+            .dz-image {
+                @media(min-width: 1200px) {
+                    transition:
+                        filter .125s ease;
+                    // The placement is mandatory!
+                }
+            }
+        }
+
+        &.dz-success {
+            .dz-success-mark {
+                background: rgba(dd-f-color('danger'), .95);
+            }
+        }
+    }
+
+    &:not(.dd-preview-is-hovered) {
+        &:active,
+        &.dz-drag-hover {
+            border-color: dd-f-color('accent');
+            color: dd-f-color('accent');
+        }
+    }
+
+    &.dz-clickable {
+        * {
+            cursor: pointer;
+        }
+    }
+
+    &.dz-drag-hover {
+        .dz-message {
+            opacity: 1;
+        }
+    }
+
+    &.dz-started {
+        padding-bottom: 6rem;
+
+        .dz-message {
+            bottom: 0;
+            display: flex;
+            top: auto;
+            transform: translate(-50%, 0);
+
+            svg {
+                height: 3rem;
+                width: 3rem;
+            }
+        }
+    }
+}

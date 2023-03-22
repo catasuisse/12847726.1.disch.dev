@@ -1,0 +1,26 @@
+package: yform_spam_protection
+version: '1.2.3'
+author: 'Friends Of REDAXO'
+supportpage: https://github.com/friendsofredaxo/yform_spam_protection
+
+requires:
+    redaxo: '^5.9'
+    packages:
+        yform: '>3'
+    php:
+        version: '>=7.1'
+
+page:
+    hidden: true
+
+pages:
+    yform/spam_protection:
+        title: 'Spamschutz'
+        subpages:
+            settings:
+                title: 'Einstellungen'
+            docs:
+                title: 'Dokumentation'
+
+default_config:
+    timer: 5

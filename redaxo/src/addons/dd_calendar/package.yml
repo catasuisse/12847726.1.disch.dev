@@ -1,0 +1,12 @@
+package: dd_calendar
+version: '1.0.0'
+author: Disch Development
+supportpage: https://www.dischdev.com
+
+page:
+    title: 'Kalender'
+    perm: dd[manual]
+    block: manual
+    prio: 1
+    icon: rex-icon fa-book
+    pjax: true

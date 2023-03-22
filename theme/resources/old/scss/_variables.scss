@@ -1,0 +1,53 @@
+$dd-default-border-radius: .5rem;
+$dd-default-border-width: .125rem;
+$dd-default-box-shadow: 0 0 .5rem rgba(0, 0, 0, .125);
+$dd-default-font-family: 'Museo Sans', sans-serif;
+$dd-default-font-family-monospace: 'Source Code Pro', monospace;
+$dd-default-font-size: 16px * .875;
+$dd-default-font-weight: 700;
+$dd-default-font-weight-bold: 900;
+$dd-default-font-weight-light: 500;
+$dd-default-font-weight-semibold: 700;
+$dd-default-line-height: 1.5;
+$dd-default-letter-spacing: .025em;
+$dd-default-opacity: .125;
+$dd-default-spacing-x: 20px;
+$dd-default-spacing-y: 40px;
+$dd-default-transition-delay: .25s;
+$dd-default-transition-duration: .125s;
+$dd-default-transition-timing-function: ease-in-out;
+$dd-max-breakpoint: 1920px;
+
+$dd-default-icon-size: $dd-default-border-width * 6.25;
+
+$dd-default-icon-wrapper-size: $dd-default-icon-size * 1.6;
+
+/*
+––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+
+$dd-breakpoints: (
+    'xs':  0,
+    'sm':  576px,
+    'md':  768px,
+    'lg':  992px,
+    'xl':  1200px,
+    '2xl': 1400px,
+    '3xl': 1600px,
+    '4xl': 1800px,
+);
+
+/*
+––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+
+$dd-colors: (
+    'background':    #ffffff,
+    'danger':        #f43f5e,
+    'default':       #334155,
+    'default-light': #f3f4f6,
+    'info':          #a78bfa,
+    'primary':       #a78bfa,
+    'primary-light': #dcfce7,
+    'success':       #2dd4bf,
+);

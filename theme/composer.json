@@ -1,0 +1,7 @@
+{
+    "require": {
+        "symfony/var-dumper": "^6.0",
+        "nesbot/carbon": "^2.55",
+        "erusev/parsedown": "^1.7"
+    }
+}

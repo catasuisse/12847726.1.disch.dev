@@ -1,0 +1,145 @@
+/* @font-face {
+    font-display: swap;
+    font-family: 'Museo Sans';
+    font-style: normal;
+    font-weight: 500;
+    src:
+        url('/theme/public/assets/frontend/new/fonts/MuseoSans500.woff2') format('woff2'),
+        url('/theme/public/assets/frontend/new/fonts/MuseoSans500.woff') format('woff');
+} */
+
+@font-face {
+    font-display: swap;
+    font-family: 'Museo Sans';
+    font-style: normal;
+    font-weight: 700;
+    src:
+        url('/theme/public/assets/frontend/new/fonts/MuseoSans700.woff2') format('woff2'),
+        url('/theme/public/assets/frontend/new/fonts/MuseoSans700.woff') format('woff');
+}
+
+/* @font-face {
+    font-display: swap;
+    font-family: 'Museo Sans';
+    font-style: normal;
+    font-weight: 900;
+    src:
+        url('/theme/public/assets/frontend/new/fonts/MuseoSans900.woff2') format('woff2'),
+        url('/theme/public/assets/frontend/new/fonts/MuseoSans900.woff') format('woff');
+} */
+
+[class*=" dd-table-"] td,
+[class*=" dd-table-"] th,
+[class*=" yform-table-"] td,
+[class*=" yform-table-"] th {
+    vertical-align: middle !important;
+}
+
+[class*=" yform-table-"] .status-toggle {
+    cursor: pointer;
+}
+
+[id^="rex-global_settings-"] .help-block {
+    font-size: 80%;
+}
+
+[id^="yform-data_edit-"][id*="-createdate"],
+[id^="yform-data_edit-"][id*="-updatedate"] {
+    display: none;
+}
+
+#rex-page-global-settings-settings .rex-page-nav {
+    display: none;
+}
+
+.dd-realistic-lg,
+.dd-realistic-reply,
+.dd-realistic-sm {
+    font-family: 'Museo Sans', sans-serif;
+    font-size: 15px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 700;
+    -webkit-hyphenate-limit-chars: auto 3;
+    -webkit-hyphens: auto;
+    -moz-hyphenate-limit-chars: auto 3;
+    -moz-hyphens: auto;
+    hyphenate-limit-chars: auto 3;
+    hyphens: auto;
+    letter-spacing: .025em;
+    line-height: 1.5;
+    padding: 12px 0 12px 12px;
+    position: relative;
+    resize: vertical;
+}
+
+.dd-realistic-lg {
+    padding-right: max(12px, calc(100% - 28px - 46.22211265869592em));
+    /* Breite des Containers ohne Padding / Schriftgrösse */
+}
+
+.dd-realistic-reply {
+    padding-right: max(12px, calc(100% - 28px - 46.035714285714286em));
+    /* Breite des Containers ohne Padding / Schriftgrösse */
+}
+
+.dd-realistic-sm {
+    padding-right: max(12px, calc(100% - 28px - 32.5869686827409em));
+    /* Breite des Containers ohne Padding / Schriftgrösse */
+}
+
+.dropdown-menu .rex-icon {
+    align-items: center;
+    display: inline-flex;
+    height: 15px;
+    justify-content: center;
+    width: 15px;
+}
+
+/*
+––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+
+#rex-page-login .rex-branding *:first-child .dd-part-0 {
+    fill: #4b9ad9;
+}
+
+#rex-page-login .rex-branding *:first-child .dd-part-1 {
+    fill: #ffffff;
+}
+
+.navbar-brand,
+.rex-branding {
+    align-items: center;
+    display: flex !important;
+}
+
+.navbar-brand > *:first-child,
+.rex-branding > *:first-child {
+    height: calc(24px * 2.353423);
+    margin-bottom: calc(-24px * 2.353423 * .5);
+    margin-top: calc(-24px * 2.353423 * .5);
+    width: calc(24px * 2.353423);
+}
+
+.navbar-brand > *:first-child .dd-part-1 {
+    fill: #324050;
+}
+
+.navbar-brand > *:first-child .dd-part-2 {
+    fill: #ffffff;
+}
+
+.navbar-brand > *:last-child,
+.rex-branding > *:last-child {
+    border-left: 1px solid rgba(255, 255, 255, .25);
+    margin-left: 12.5px;
+    padding-left: 12.5px;
+}
+
+.rex-is-popup .navbar-brand > *:first-child {
+    height: calc(22px * 2.353423);
+    margin-bottom: calc(-22px * 2.353423 * .5);
+    margin-top: calc(-22px * 2.353423 * .5);
+    width: calc(22px * 2.353423);
+}

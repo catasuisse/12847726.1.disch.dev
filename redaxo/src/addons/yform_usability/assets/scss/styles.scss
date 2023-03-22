@@ -1,0 +1,112 @@
+.sortable-list {
+    .status-toggle {
+        cursor: pointer;
+        white-space: nowrap;
+    }
+    
+    .status-select {
+        min-width: 100px;   
+        height: 28px !important;
+        font-size: 15px;
+        padding: 1px;
+    }
+
+    .sort-handle:hover {
+        color: #4b9ad9;
+        cursor: ns-resize;
+    }
+
+    .sortable-ghost {
+        background: #FFFCDD !important;
+
+        td {
+            background: transparent !important;
+        }
+    }
+
+    .sortable-drag {
+        background: rgba(255, 255, 255, 0.5) !important;
+
+        td {
+            background: transparent !important;
+        }
+    }
+}
+
+#yform_usability-search {
+    .form-group {
+        margin: 0;
+    }
+
+    .form-group > * {
+        margin-bottom: 10px;
+
+        &:last-child {
+            margin: 0;
+        }
+    }
+
+    @media (min-width: 640px) {
+        .form-group > * {
+            display: inline-block;
+            margin: 0 10px 0 0;
+
+            &:last-child {
+                margin: 0;
+            }
+        }
+        label {
+            width: 14%;
+        }
+        select {
+            width: 30%;
+        }
+        .input-wrapper {
+            width: 48%;
+            position: relative;
+
+            .filter-reset {
+                display: none;
+                cursor: pointer;
+                position: absolute;
+                top: 0;
+                right: 0;
+                font-size: 24px;
+                padding: 5px 8px;
+            }
+        }
+    }
+
+    &.filtered {
+        .input-wrapper {
+            input {
+                padding-right: 37px;
+            }
+
+            .filter-reset {
+                display: block;
+            }
+        }
+    }
+}
+
+.yform-lang-tabs {
+    .tab-content {
+        // due to dark-mode
+        @media (prefers-color-scheme: light) {
+            background: #fff;
+        }
+
+        border-bottom: 2px solid #c1c9d4;
+        padding: 20px 12px 12px 12px;
+
+        textarea {
+            display: block;
+            width: 100%;
+        }
+    }
+}
+
+.table-responsive {
+    padding-bottom: 120px;
+}

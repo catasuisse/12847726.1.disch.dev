@@ -1,0 +1,47 @@
+@function dd-f-color($color: false) {
+    @if map-has-key($dd-colors, $color) {
+        @return map-get($dd-colors, $color);
+    }
+
+    @return false;
+}
+
+/*
+––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+
+@function -dd-f-space-x($calculation: false) {
+    @if $calculation {
+        @return calc(-#{$dd-default-spacing-x} #{$calculation});
+    } @else {
+        @return -$dd-default-spacing-x;
+    }
+}
+
+@function dd-f-space-x($calculation: false) {
+    @if $calculation {
+        @return calc(#{$dd-default-spacing-x} #{$calculation});
+    } @else {
+        @return $dd-default-spacing-x;
+    }
+}
+
+/*
+––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+
+@function -dd-f-space-y($calculation: false) {
+    @if $calculation {
+        @return calc(-#{$dd-default-spacing-y} #{$calculation});
+    } @else {
+        @return -$dd-default-spacing-y;
+    }
+}
+
+@function dd-f-space-y($calculation: false) {
+    @if $calculation {
+        @return calc(#{$dd-default-spacing-y} #{$calculation});
+    } @else {
+        @return $dd-default-spacing-y;
+    }
+}

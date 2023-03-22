@@ -1,0 +1,23 @@
+package: multiupload
+version: '2.1.3'
+author: Friends Of REDAXO
+supportpage: https://github.com/FriendsOfREDAXO/
+
+page:
+    title: 'Multiupload'
+    perm: multiupload[]
+    subpages:
+        quickupload: { title: translate:quickupload}
+        upload: { title: 'upload', hidden: true, hasLayout: false }
+
+pages:
+    mediapool/multiupload:
+        title: 'Multiupload'
+        perm: multiupload[]
+        subpages:
+          quickupload: { title: translate:quickupload, hidden: true}
+
+requires:
+    packages:
+        media_manager: '^2.0.0'
+    redaxo: ^5.0

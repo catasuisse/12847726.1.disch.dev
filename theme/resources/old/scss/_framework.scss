@@ -1,0 +1,403 @@
+.dd-container,
+.dd-container-fluid {
+    margin: 0 auto;
+    padding: dd-f-space-y('* 4') dd-f-space-x('* 1.5');
+    width: 100%;
+
+    @include dd-m-breakpoint-up('sm') {
+        padding-left: dd-f-space-x('* 2');
+        padding-right: dd-f-space-x('* 2');
+    }
+
+    @include dd-m-breakpoint-up('lg') {
+        padding: dd-f-space-y('* 8') dd-f-space-x('* 3');
+    }
+
+    .dd-container,
+    .dd-container-fluid {
+        left: 50%;
+        margin-left: 0;
+        margin-right: 0;
+        padding-bottom: 0;
+        padding-top: 0;
+        position: relative;
+        transform:
+            translate(-50%, 0);
+    }
+
+    .dd-container-fluid {
+        max-width: $dd-max-breakpoint;
+        width: 100vw;
+    }
+}
+
+.dd-container {
+    @include dd-m-breakpoint-up('lg') {
+        max-width: 992px;
+    }
+
+    @include dd-m-breakpoint-up('xl') {
+        max-width: 1200px;
+    }
+}
+
+.dd-d-block {
+    display: block !important;
+}
+
+.dd-d-flex {
+    display: flex !important;
+}
+
+.dd-d-none {
+    display: none !important;
+}
+
+.dd-d-lg-block {
+    @include dd-m-breakpoint-up('lg') {
+        display: block;
+    }
+}
+
+.dd-d-lg-none {
+    @include dd-m-breakpoint-up('lg') {
+        display: none;
+    }
+}
+
+.dd-font-monospace {
+    font-family: $dd-default-font-family-monospace !important;
+}
+
+.dd-fs-3xs {
+    font-size: .5rem !important;
+    letter-spacing: $dd-default-letter-spacing !important;
+}
+
+.dd-fs-2xs {
+    font-size: .625rem !important;
+    letter-spacing: $dd-default-letter-spacing !important;
+}
+
+.dd-fs-xs {
+    font-size: .75rem !important;
+    letter-spacing: $dd-default-letter-spacing !important;
+}
+
+.dd-fs-sm {
+    font-size: .875rem !important;
+    letter-spacing: $dd-default-letter-spacing !important;
+}
+
+.dd-fs-lg {
+    font-size: 1.125rem !important;
+    letter-spacing: $dd-default-letter-spacing !important;
+}
+
+.dd-fs-xl {
+    font-size: 1.25rem !important;
+    letter-spacing: $dd-default-letter-spacing !important;
+}
+
+.dd-fs-2xl {
+    font-size: 1.5rem !important;
+    letter-spacing: $dd-default-letter-spacing !important;
+}
+
+.dd-fs-3xl {
+    font-size: 2rem;
+    letter-spacing: $dd-default-letter-spacing !important;
+    line-height: 1.125;
+
+    @include dd-m-breakpoint-up('lg') {
+        font-size: 2rem * 1.125;
+    }
+}
+
+.dd-fs-sm-lg {
+    @include dd-m-breakpoint-up('sm') {
+        font-size: 1.125rem !important;
+        letter-spacing: $dd-default-letter-spacing !important;
+    }
+
+    b,
+    strong {
+        font-weight: $dd-default-font-weight-bold;
+    }
+}
+
+.dd-fst-italic {
+    font-style: italic;
+}
+
+.dd-fw-bold {
+    font-weight: $dd-default-font-weight-bold !important;
+}
+
+.dd-fw-normal {
+    font-weight: $dd-default-font-weight !important;
+}
+
+.dd-fw-semibold {
+    font-weight: $dd-default-font-weight-semibold !important;
+}
+
+.dd-fw-sm-bold {
+    @include dd-m-breakpoint-up('sm') {
+        font-weight: $dd-default-font-weight-bold !important;
+    }
+}
+
+.dd-fw-sm-normal {
+    @include dd-m-breakpoint-up('sm') {
+        font-weight: $dd-default-font-weight !important;
+    }
+}
+
+.-dd-mb-1 {
+    margin-bottom: -dd-f-space-y() !important;
+
+    @include dd-m-breakpoint-up('lg') {
+        margin-bottom: -dd-f-space-y('* 2') !important;
+    }
+}
+
+.-dd-mb-2 {
+    margin-bottom: -dd-f-space-y('* 2') !important;
+
+    @include dd-m-breakpoint-up('lg') {
+        margin-bottom: -dd-f-space-y('* 4') !important;
+    }
+}
+
+.-dd-mt-1 {
+    margin-top: -dd-f-space-y() !important;
+
+    @include dd-m-breakpoint-up('lg') {
+        margin-top: -dd-f-space-y('* 2') !important;
+    }
+}
+
+.-dd-mt-2 {
+    margin-top: -dd-f-space-y('* 2') !important;
+
+    @include dd-m-breakpoint-up('lg') {
+        margin-top: -dd-f-space-y('* 4') !important;
+    }
+}
+
+.dd-mb-0 {
+    margin-bottom: 0 !important;
+}
+
+.dd-mb-1 {
+    margin-bottom: dd-f-space-y() !important;
+
+    @include dd-m-breakpoint-up('lg') {
+        margin-bottom: dd-f-space-y('* 2') !important;
+    }
+}
+
+.dd-mb-2 {
+    margin-bottom: dd-f-space-y('* 2') !important;
+
+    @include dd-m-breakpoint-up('lg') {
+        margin-bottom: dd-f-space-y('* 4') !important;
+    }
+}
+
+.dd-min-vh-100 {
+    min-height: 100vh !important;
+}
+
+.dd-mt-0 {
+    margin-top: 0 !important;
+}
+
+.dd-mt-1 {
+    margin-top: dd-f-space-y() !important;
+
+    @include dd-m-breakpoint-up('lg') {
+        margin-top: dd-f-space-y('* 2') !important;
+    }
+}
+
+.dd-mt-2 {
+    margin-top: dd-f-space-y('* 2') !important;
+
+    @include dd-m-breakpoint-up('lg') {
+        margin-top: dd-f-space-y('* 4') !important;
+    }
+}
+
+.dd-mx-auto {
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+.dd-opacity-5 {
+    opacity: .5 !important;
+}
+
+.dd-pb-0 {
+    padding-bottom: 0 !important;
+}
+
+.dd-pt-0 {
+    padding-top: 0 !important;
+}
+
+.dd-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -dd-f-space-x() -dd-f-space-x('* .5') 0;
+    pointer-events: none;
+
+    @include dd-m-breakpoint-up('sm') {
+        margin: -dd-f-space-x('* 2') -dd-f-space-x() 0;
+    }
+
+    @include dd-m-breakpoint-up('lg') {
+        margin: -dd-f-space-x('* 3') -dd-f-space-x('* 1.5') 0;
+    }
+
+    > {
+        * {
+            flex: 1 0 0%;
+            margin-top: dd-f-space-x();
+            max-width: 100%;
+            padding-left: dd-f-space-x('* .5');
+            padding-right: dd-f-space-x('* .5');
+            pointer-events: auto;
+            width: 100%;
+
+            @include dd-m-breakpoint-up('sm') {
+                margin-top: dd-f-space-x('* 2');
+                padding-left: dd-f-space-x();
+                padding-right: dd-f-space-x();
+            }
+
+            @include dd-m-breakpoint-up('lg') {
+                margin-top: dd-f-space-x('* 3');
+                padding-left: dd-f-space-x('* 1.5');
+                padding-right: dd-f-space-x('* 1.5');
+            }
+        }
+
+        [class*="dd-col-"] {
+            flex: 0 0 auto;
+        }
+
+        .dd-col-6 {
+            width: 50%;
+        }
+
+        .dd-col-12 {
+            width: 100%;
+        }
+
+        .dd-col-md-6 {
+            @include dd-m-breakpoint-up('md') {
+                width: 50%;
+            }
+        }
+
+        .dd-col-xl-4 {
+            @include dd-m-breakpoint-up('xl') {
+                width: 33.333333%;
+            }
+        }
+    }
+}
+
+.dd-text-center {
+    text-align: center !important;
+}
+
+.dd-text-right {
+    text-align: right !important;
+}
+
+.dd-text-sm-center {
+    @include dd-m-breakpoint-up('sm') {
+        text-align: center !important;
+    }
+}
+
+.dd-text-danger {
+    color: dd-f-color('danger') !important;
+
+    &:visited {
+        color: dd-f-color('danger') !important;
+    }
+}
+
+.dd-text-default {
+    color: dd-f-color('default') !important;
+
+    &:visited {
+        color: dd-f-color('default') !important;
+    }
+}
+
+.dd-text-nowrap {
+    white-space: nowrap !important;
+}
+
+.dd-text-primary {
+    color: dd-f-color('primary') !important;
+
+    &:visited {
+        color: dd-f-color('primary') !important;
+    }
+}
+
+.dd-vh-100 {
+    height: 100vh !important;
+}
+
+.dd-w {
+    &-875 {
+        $percentage: 12.5%;
+
+        @include dd-m-breakpoint-up('sm') {
+            margin-left: -dd-f-space-x('* 2') !important;
+            margin-right: -dd-f-space-x('* 2') !important;
+            padding-left: calc(#{$percentage} * .5 + #{dd-f-space-x('* 2')});
+            padding-right: calc(#{$percentage} * .5 + #{dd-f-space-x('* 2')});
+            width: calc(100% + #{dd-f-space-x('* 4')}) !important;
+        }
+
+        @include dd-m-breakpoint-up('lg') {
+            margin-left: -dd-f-space-x('* 3') !important;
+            margin-right: -dd-f-space-x('* 3') !important;
+            padding-left: calc(#{$percentage} * .5 + #{dd-f-space-x('* 3')});
+            padding-right: calc(#{$percentage} * .5 + #{dd-f-space-x('* 3')});
+            width: calc(100% + #{dd-f-space-x('* 6')}) !important;
+        }
+
+        &.dd-left-aligned {
+            @include dd-m-breakpoint-up('sm') {
+                padding-left: dd-f-space-x('* 2');
+                padding-right: calc(#{$percentage} + #{dd-f-space-x('* 2')});
+            }
+
+            @include dd-m-breakpoint-up('lg') {
+                padding-left: dd-f-space-x('* 3');
+                padding-right: calc(#{$percentage} + #{dd-f-space-x('* 3')});
+            }
+        }
+
+        figcaption {
+            @include dd-m-breakpoint-up('sm') {
+                padding-left: calc(#{$percentage} * .5 + #{dd-f-space-x('* 2')} + #{$dd-default-border-radius} + #{$dd-default-border-radius} * .75);
+                padding-right: calc(#{$percentage} * .5 + #{dd-f-space-x('* 2')} + #{$dd-default-border-radius} + #{$dd-default-border-radius} * .75);
+            }
+
+            @include dd-m-breakpoint-up('lg') {
+                padding-left: calc(#{$percentage} * .5 + #{dd-f-space-x('* 3')} + #{$dd-default-border-radius} + #{$dd-default-border-radius} * .75);
+                padding-right: calc(#{$percentage} * .5 + #{dd-f-space-x('* 3')} + #{$dd-default-border-radius} + #{$dd-default-border-radius} * .75);
+            }
+        }
+    }
+}

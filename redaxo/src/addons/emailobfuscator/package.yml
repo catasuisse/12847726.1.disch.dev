@@ -1,0 +1,13 @@
+package: emailobfuscator
+version: '3.0.0'
+author: Friends Of REDAXO
+supportpage: github.com/FriendsOfREDAXO/emailobfuscator
+
+page:
+    title: 'translate:title'
+    perm: emailobfuscator[]
+    pjax: true
+    icon: rex-icon fa-lock
+    subpages:
+        config: { title: 'translate:config', perm: emailobfuscator[config] }
+        help: { title: 'translate:credits_help', icon: rex-icon rex-icon-help, itemclass: pull-right, perm: emailobfuscator[config] }

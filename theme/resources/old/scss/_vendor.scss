@@ -1,0 +1,32 @@
+@import 'dropzone/dist/dropzone';
+@import 'video.js';
+
+@font-face {
+    font-display: swap;
+    font-family: 'Museo Sans';
+    font-style: normal;
+    font-weight: 500;
+    src:
+        url('/theme/public/assets/frontend/old/fonts/MuseoSans500.woff2') format('woff2'),
+        url('/theme/public/assets/frontend/old/fonts/MuseoSans500.woff') format('woff');
+}
+
+@font-face {
+    font-display: swap;
+    font-family: 'Museo Sans';
+    font-style: normal;
+    font-weight: 700;
+    src:
+        url('/theme/public/assets/frontend/old/fonts/MuseoSans700.woff2') format('woff2'),
+        url('/theme/public/assets/frontend/old/fonts/MuseoSans700.woff') format('woff');
+}
+
+@font-face {
+    font-display: swap;
+    font-family: 'Museo Sans';
+    font-style: normal;
+    font-weight: 900;
+    src:
+        url('/theme/public/assets/frontend/old/fonts/MuseoSans900.woff2') format('woff2'),
+        url('/theme/public/assets/frontend/old/fonts/MuseoSans900.woff') format('woff');
+}

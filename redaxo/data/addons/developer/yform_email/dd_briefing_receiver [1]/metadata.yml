@@ -1,0 +1,7 @@
+name: dd_briefing_receiver
+mail_from: no-reply@disch.dev
+mail_from_name: 'REX_YFORM_DATA[field="firstname"] REX_YFORM_DATA[field="lastname"]'
+mail_reply_to: 'REX_YFORM_DATA[field="email"]'
+mail_reply_to_name: 'REX_YFORM_DATA[field="firstname"] REX_YFORM_DATA[field="lastname"]'
+subject: 'Neues Briefing von REX_YFORM_DATA[field="firstname"] REX_YFORM_DATA[field="lastname"]'
+attachments: ''
