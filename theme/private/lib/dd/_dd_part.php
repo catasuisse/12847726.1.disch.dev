@@ -634,46 +634,7 @@ class dd_part
     public static function nav($categories)
     {
         foreach($categories as $value) {
-            if(in_array($value['id'], [24, 34])) {
-                continue;
-            }
-
-            echo '<li><a class="dd-icon" href="';
-
-            if(
-                rex_article::getCurrent()->getTemplateId() == 1 ||
-                (
-                    rex_article::getCurrent()->getTemplateId() == 7 &&
-                    $value['anchor'] == 'kontakt'
-
-                )
-            ) {
-                if($value['single']) {
-                    echo rex_getUrl($value['id']);
-                } else {
-                    echo 'javascript:;" data-target="#';
-
-                    if($value['anchor']) {
-                        echo $value['anchor'];
-                    } else {
-                        echo 'dd-article-' . str_pad($value['id'], 6, 0, STR_PAD_LEFT);
-                    }
-                }
-            } else {
-                if($value['single']) {
-                    echo rex_getUrl($value['id']);
-                } else {
-                    echo self::homeLink() . '#';
-
-                    if($value['anchor']) {
-                        echo $value['anchor'];
-                    } else {
-                        echo 'dd-article-' . str_pad($value['id'], 6, 0, STR_PAD_LEFT);
-                    }
-                }
-            }
-
-            echo '" title="' . $value['name'] . '" data-tooltip>' . file_get_contents('theme/public/assets/frontend/new/images/icon-' . $value['icon'] . '.svg') . '</a></li>';
+            echo '<li class="' . (rex_article::getCurrentId() == $value['id'] ? ' dd-active' : null) . '"><a href="javascript:;" title="' . $value['name'] . '">' . $value['name'] . '</a></li>';
         }
     }
 

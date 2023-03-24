@@ -1,3 +1,4 @@
+<?php /*
 <div id="dd-logo-nav-wrapper" class="dd-logo-nav-wrapper">
     <?php
     echo '<a href="';
@@ -26,3 +27,4 @@
     echo '</a>';
     ?>
 </div>
+*/ ?>

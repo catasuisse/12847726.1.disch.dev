@@ -35,10 +35,6 @@ if(class_exists('Url\Url') && Url\Url::resolveCurrent()) {
                 */ ?>
 
                 <?php
-                if(!$navIsHidden) {
-                    require_once('partials/intro.php');
-                }
-
                 require_once('partials/nav.php');
 
                 if(dischdev()->permission($this->getArticleId())) {
@@ -46,14 +42,9 @@ if(class_exists('Url\Url') && Url\Url::resolveCurrent()) {
                 } else {
                     dd_part()->tokenForm($this->getArticleId());
                 }
-
-                if(!rex_article_slice::getSlicesForArticleOfType(rex_article::getCurrentId(), 16)) {
-                    require_once('partials/copyright.php');
-                }
                 
                 require_once('partials/footer.php');
                 require_once('partials/logo.php');
-                require_once('partials/address.php');
                 require_once('partials/misc.php');
                 ?>
             </main>

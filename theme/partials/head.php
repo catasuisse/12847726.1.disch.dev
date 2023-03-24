@@ -70,21 +70,5 @@ if($this->getArticleId() != 25 && !rex::getUser()) {
     <meta name="msapplication-TileColor" content="#7156ee" />
     <meta name="theme-color" content="#000000" />
 
-    <link rel="preconnect" href="//hello.myfonts.net/count/41789e" media="screen" />
     <link rel="stylesheet" href="/theme/public/assets/frontend/new/css/frontend.css?v=<?php echo filemtime('theme/public/assets/frontend/new/css/frontend.css'); ?>" media="screen" />
-
-    <?php /*
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DVTDS2F4Y2"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-
-        gtag('js', new Date());
-        
-        gtag('config', 'G-DVTDS2F4Y2');
-    </script>
-    */ ?>
 </head>

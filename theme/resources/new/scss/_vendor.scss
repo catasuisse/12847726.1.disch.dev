@@ -1,34 +1,4 @@
-@import 'https://use.typekit.net/iyg3lua.css';
+@import 'https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,300;0,700&display=swap';
 @import 'dropzone/dist/dropzone';
 @import 'locomotive-scroll/dist/locomotive-scroll';
 @import 'video.js';
-
-// @font-face {
-//     font-display: swap;
-//     font-family: 'Museo Sans';
-//     font-style: normal;
-//     font-weight: 500;
-//     src:
-//         url('/theme/public/assets/frontend/new/fonts/MuseoSans500.woff2') format('woff2'),
-//         url('/theme/public/assets/frontend/new/fonts/MuseoSans500.woff') format('woff');
-// }
-
-@font-face {
-    font-display: swap;
-    font-family: 'Museo Sans';
-    font-style: normal;
-    font-weight: 700;
-    src:
-        url('/theme/public/assets/frontend/new/fonts/MuseoSans700.woff2') format('woff2'),
-        url('/theme/public/assets/frontend/new/fonts/MuseoSans700.woff') format('woff');
-}
-
-// @font-face {
-//     font-display: swap;
-//     font-family: 'Museo Sans';
-//     font-style: normal;
-//     font-weight: 900;
-//     src:
-//         url('/theme/public/assets/frontend/new/fonts/MuseoSans900.woff2') format('woff2'),
-//         url('/theme/public/assets/frontend/new/fonts/MuseoSans900.woff') format('woff');
-// }
