@@ -1,6 +1,6 @@
 {
     "/public/assets/frontend/old/js/frontend.js": "/public/assets/frontend/old/js/frontend.js",
     "/public/assets/frontend/new/js/frontend.js": "/public/assets/frontend/new/js/frontend.js",
-    "/public/assets/frontend/new/css/frontend.css": "/public/assets/frontend/new/css/frontend.css",
-    "/public/assets/frontend/old/css/frontend.css": "/public/assets/frontend/old/css/frontend.css"
+    "/public/assets/frontend/old/css/frontend.css": "/public/assets/frontend/old/css/frontend.css",
+    "/public/assets/frontend/new/css/frontend.css": "/public/assets/frontend/new/css/frontend.css"
 }

@@ -16,6 +16,16 @@
                 REX_VALUE[1]
             </textarea>
         </div>
+        <div class="col-sm-12">
+            <label>Artikel</label>
+
+            REX_LINK[id=1 widget=1]
+        </div>
+        <div class="col-sm-12">
+            <label>Label</label>
+
+            <input class="form-control" type="text" name="REX_INPUT_VALUE[3]" value="REX_VALUE[3]">
+        </div>
     </div>
     <div class="form-group" style="
         border-top: 2px solid #5bb585;

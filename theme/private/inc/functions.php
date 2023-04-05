@@ -28,11 +28,6 @@ if(rex::isFrontend()) {
     if(rex::getUser()) {
 
         rex_extension::register('PAGES_PREPARED', function(rex_extension_point $extensionPoint) {
-            $page = rex_be_controller::getPageObject('mediapool');
-            $page->setHidden(true);
-        });
-
-        rex_extension::register('PAGES_PREPARED', function(rex_extension_point $extensionPoint) {
             $page = rex_be_controller::getPageObject('multiupload');
             $page->setHidden(true);
         });

@@ -58,6 +58,16 @@ window.Dropzone = Dropzone;
 ––––––––––––––––––––––––––––––––––––––––––––––––––
 */
 
+import { Fancybox } from "@fancyapps/ui";
+
+Fancybox.bind('[data-fancybox]', {
+    
+});
+
+/*
+––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+
 var timer = [];
 
 /*
@@ -514,6 +524,155 @@ document.addEventListener('DOMContentLoaded', function(event) {
                 });
             });
         });
+
+        /*
+        ––––––––––––––––––––––––––––––––––––––––––––––––––
+        */
+    
+        if($('#dd-section-contact-form').length) {
+            $('#dd-section-contact-form form').submit(function(event) {
+                event.preventDefault();
+    
+                var $this = $(this);
+    
+                var alerts = $this.prev('.dd-alerts');
+                var fields = [];
+                var error = false;
+    
+                fields['article'] = $this.find('[name="article"]');
+                fields['callname'] = $this.find('[name="callname"]');
+                fields['content'] = $this.find('[name="content"]');
+                fields['email'] = $this.find('[name="email"]');
+                fields['honeypot'] = $this.find('[name="honeypot"]');
+                fields['referer'] = $this.find('[name="referer"]');
+    
+                $this
+                    .find('.dd-form-group')
+                    .removeClass('dd-invalid');
+    
+                alerts
+                    .empty()
+                    .hide();
+                
+                fields['callname']
+                    .closest('.dd-form-group')
+                    .find('.dd-alert')
+                    .text('–');
+    
+                fields['content']
+                    .closest('.dd-form-group')
+                    .find('.dd-alert')
+                    .text('–');
+                
+                fields['email']
+                    .closest('.dd-form-group')
+                    .find('.dd-alert')
+                    .text('–');
+    
+                scroll.update();
+    
+                scroll.scrollTo('#dd-section-contact-form', {
+                    duration: 250,
+                    offset: -250,
+                });
+    
+                if(!fields['callname'].val()) {
+                    error = true;
+    
+                    fields['callname']
+                        .closest('.dd-form-group')
+                        .addClass('dd-invalid')
+                        .find('.dd-alert')
+                        .text('Diese Angabe wird benötigt.')
+                }
+    
+                if(!fields['content'].val()) {
+                    error = true;
+    
+                    fields['content']
+                        .closest('.dd-form-group')
+                        .addClass('dd-invalid')
+                        .find('.dd-alert')
+                        .text('Diese Angabe wird benötigt.')
+                }
+    
+                var regex = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+    
+                if(!regex.test(fields['email'].val())) {
+                    error = true;
+    
+                    fields['email']
+                        .closest('.dd-form-group')
+                        .addClass('dd-invalid')
+                        .find('.dd-alert')
+                        .text('Diese Angabe ist fehlerhaft.')
+                }
+    
+                if(!fields['email'].val()) {
+                    error = true;
+    
+                    fields['email']
+                        .closest('.dd-form-group')
+                        .addClass('dd-invalid')
+                        .find('.dd-alert')
+                        .text('Diese Angabe wird benötigt.')
+                }
+    
+                if(error) {
+                    return false;
+                }
+    
+                alerts
+                    .empty()
+                    .append('<li class="dd-alert-flash">Deine Angaben werden geprüft ...</li>')
+                    .show()
+                    .nextAll()
+                    .hide();
+    
+                scroll.update();
+    
+                $.ajax({ url: '/theme/ajax/form-contact.php', type: 'POST', data: {
+    
+                    article: fields['article'].val(),
+                    callname: fields['callname'].val(),
+                    content: fields['content'].val(),
+                    email: fields['email'].val(),
+                    honeypot: fields['honeypot'].val(),
+                    referer: fields['referer'].val()
+    
+                }, success: function(data) {
+    
+                    data = $.parseJSON(data);
+    
+                    alerts
+                        .empty()
+                        .append('<li class="dd-alert-' + data['type'] + '">' + data['alert'] + '</li>')
+                        .nextAll()
+                        .show();
+    
+                    if(data['code'] == 2) {
+    
+                        //
+    
+                    } else if(data['code'] == 1) {
+    
+                        fields['content'].val('');
+    
+                        alerts
+                            .nextAll()
+                            .show();
+    
+                    }
+    
+                    scroll.update();
+    
+                }, error: function() {
+    
+                    //
+    
+                }});
+            });
+        }
     });
 
     /*

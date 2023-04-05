@@ -3,7 +3,14 @@ $dd-font-family: 'Mulish', sans-serif;
 $dd-font-weight: 300;
 $dd-letter-spacing: .0125em;
 
-$dd-breakpoints: (
+$dd-max-breakpoints: (
+    'sm': 575px,
+    'md': 767px,
+    'lg': 991px,
+    'xl': 1199px
+);
+
+$dd-min-breakpoints: (
     'sm': 576px,
     'md': 768px,
     'lg': 992px,
@@ -13,9 +20,9 @@ $dd-breakpoints: (
 $dd-colors: (
     'accent': #9d1438,
     'background':#ffffff,
-    'danger':#f43f5e,
+    'danger':#9d1438,
     'foreground': #1f2937,
     'info':#a78bfa,
-    'success':#2dd4bf,
+    'success':#3f784c,
     'warning':#fde047,
 );

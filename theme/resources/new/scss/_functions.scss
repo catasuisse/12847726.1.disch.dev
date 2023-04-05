@@ -1,6 +1,14 @@
-@function dd-f-breakpoint($breakpoint: false) {
-    @if map-has-key($dd-breakpoints, $breakpoint) {
-        @return map-get($dd-breakpoints, $breakpoint);
+@function dd-f-max-breakpoint($breakpoint: false) {
+    @if map-has-key($dd-max-breakpoints, $breakpoint) {
+        @return map-get($dd-max-breakpoints, $breakpoint);
+    }
+
+    @return false;
+}
+
+@function dd-f-min-breakpoint($breakpoint: false) {
+    @if map-has-key($dd-min-breakpoints, $breakpoint) {
+        @return map-get($dd-min-breakpoints, $breakpoint);
     }
 
     @return false;

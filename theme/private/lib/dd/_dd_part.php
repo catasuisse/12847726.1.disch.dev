@@ -108,12 +108,7 @@ class dd_part
 
     public static function callToAction($label, $href, $parameter = null, $class = null)
     {
-        $callToAction  = '<a class="dd-with-arrow' . ($class ? ' ' . $class : null) . '" href="' . $href . '"' . ($parameter ? ' ' . $parameter : null) . '>';
-        $callToAction .= '<span>' . $label . '</span>';
-        $callToAction .= file_get_contents(rex_path::base('theme/public/assets/frontend/new/images/icon-arrow-' . (str_contains($class, 'dd-left-aligned') ? 'left' : 'right') . '.svg'));
-        $callToAction .= '</a>';
-
-        return $callToAction;
+        return '<a class="dd-btn' . ($class ? ' ' . $class : null) . '" href="' . $href . '"' . ($parameter ? ' ' . $parameter : null) . '><span>' . $label . '</span><span>' . $label . '</span></a>';
     }
 
     public static function catchments($links = false, $size = 'sm')
@@ -267,7 +262,7 @@ class dd_part
                     if(!$token) {
                         ?>
 
-                        <div class="dd-form-row dd-form-row-rule">
+                        <div class="dd-form-row">
                             <div class="dd-col-12 dd-col-lg-6">
                                 <div class="dd-form-group">
                                     <label>Wie lautet deine E-Mail-Adresse?</label>
@@ -296,7 +291,7 @@ class dd_part
                     }
                     ?>
 
-                    <div class="dd-form-row dd-form-row-rule">
+                    <div class="dd-form-row">
                         <div class="dd-col-12">
                             <div class="dd-form-group">
                                 <label>Was denkst du darüber?</label>
@@ -404,19 +399,47 @@ class dd_part
     {
         ?>
 
-        <section id="dd-section-contact-form" class="dd-min-h-0 dd-section-contact-form" data-scroll-section>
-            <div class="dd-container" data-scroll data-address>
-                <?php echo $header; ?>
+        <?php /*
+        <section class="dd-bg-gray dd-min-h-0" data-scroll-section>
+            <div class="dd-container dd-container-lg-fluid" data-scroll>
                 
+                <div class="dd-row dd-row-expanded">
+                    <div class="dd-col-12 dd-col-lg-6">
+                        <h3>Immobilienmakler</h3>
+
+                        <p class="dd-fs-sm">
+                            Stadelmann und Partner Immobilien<br />
+                            Rothusstrasse 23<br />
+                            6331 Hünenberg<br />
+                            <a href="mailto:felix.stadelmann@stadelmannpartner.ch">info@stadelmannpartner.ch</a><br />
+                            <a href="tel:+41415080707">+41 41 508 07 07</a><br />
+                            <a href="https://stadelmannpartner.ch" target="_blank">www.stadelmannpartner.ch</a>
+                        </p>
+                    </div>
+                    <div class="dd-col-12 dd-col-lg-6">
+                        <h3>Ansprechperson</h3>
+
+                        <p class="dd-fs-sm">
+                            Stadelmann und Partner Immobilien<br />
+                            Felix Stadelmann<br />
+                            <a href="mailto:felix.stadelmann@stadelmannpartner.ch">felix.stadelmann@stadelmannpartner.ch</a><br />
+                            <a href="tel:+41415080707">+41 41 508 07 07</a><br />
+                            <a href="tel:+41793360588">+41 79 336 05 88</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        */ ?>
+
+        <section id="dd-section-contact-form" class="dd-min-h-0 dd-section-contact-form" data-scroll-section>
+            <div class="dd-container" data-scroll>
                 <ul class="dd-alerts" style="
-                    margin-bottom: 4rem;
-                    <?php echo $header ? 'margin-top: 4rem;' : null; ?>
+                    margin-bottom: 6rem;
                 "></ul>
 
-                <form style="
-                    <?php echo $header ? 'margin-top: 4rem;' : null; ?>
-                ">
-                    <div class="dd-form-row dd-form-row-rule">
+                <form>
+                    <div class="dd-form-row">
                         <div class="dd-col-12">
                             <div class="dd-form-group">
                                 <label>Was möchtest du mir erzählen?</label>
@@ -426,7 +449,7 @@ class dd_part
                         </div>
                     </div>
 
-                    <div class="dd-form-row dd-form-row-rule">
+                    <div class="dd-form-row">
                         <div class="dd-col-12 dd-col-lg-6">
                             <div class="dd-form-group">
                                 <label>Wie lautet deine E-Mail-Adresse?</label>
@@ -447,10 +470,6 @@ class dd_part
                     <input name="article" type="hidden" value="<?php echo rex_article::getCurrentId(); ?>" autocomplete="off" />
                     <input name="honeypot" type="email" autocomplete="off" />
                     <input name="referer" type="hidden" value="<?php echo array_key_exists('HTTP_REFERER', $_SERVER) && $_SERVER['HTTP_REFERER'] ? $_SERVER['HTTP_REFERER'] : null; ?>" autocomplete="off" />
-
-                    <p class="dd-fs-xs" style="
-                        margin-top: 2rem;
-                    ">Ich nehme den Schutz persönlicher Daten sehr ernst und versuche, ihn auch technisch zu gewährleisten. Garantieren kann ich ihn technisch aber nicht, weil Angriffe durch Hacker immer möglich sind. Mehr dazu erfährst du in meiner <a href="<?php echo rex_getUrl(29); ?>">Datenschutzerklärung</a>.</p>
 
                     <ul class="dd-call-to-actions">
                         <?php echo '<li>' . dd_part::callToAction(
@@ -634,7 +653,7 @@ class dd_part
     public static function nav($categories)
     {
         foreach($categories as $value) {
-            echo '<li class="' . (rex_article::getCurrentId() == $value['id'] ? ' dd-active' : null) . '"><a href="javascript:;" title="' . $value['name'] . '">' . $value['name'] . '</a></li>';
+            echo '<li class="' . (rex_article::getCurrentId() == $value['id'] ? ' dd-active' : null) . '"><a href="' . rex_getUrl($value['id']) . '" title="' . $value['name'] . '">' . $value['name'] . '</a></li>';
         }
     }
 
@@ -654,7 +673,7 @@ class dd_part
                 <form style="
                     <?php echo $header ? 'margin-top: 4rem;' : null; ?>
                 ">
-                    <div class="dd-form-row dd-form-row-rule">
+                    <div class="dd-form-row">
                         <div class="dd-col-12 dd-col-lg-6">
                             <div class="dd-form-group">
                                 <label>Wie lautet deine E-Mail-Adresse?</label>
@@ -859,7 +878,7 @@ class dd_part
                 "></ul>
 
                 <form data-article="<?php echo $article; ?>" data-post="<?php echo $post; ?>">
-                    <div class="dd-form-row dd-form-row-rule">
+                    <div class="dd-form-row">
                         <div class="dd-col-12">
                             <div class="dd-form-group">
                                 <label>Wie lautet deine E-Mail-Adresse?</label>
