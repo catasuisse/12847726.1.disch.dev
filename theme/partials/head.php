@@ -55,8 +55,8 @@ if($this->getArticleId() != 25 && !rex::getUser()) {
     }
 
     echo '<meta property="fb:app_id" content="966242223397117" />' . PHP_EOL;
+    echo '<meta property="og:site_name" content="' . rex::getServerName() . '" />' . PHP_EOL;
     // echo '<meta property="og:image" content="https://disch.dev/theme/public/assets/frontend/new/images/open-graph-image.png?v=' . filemtime('theme/public/assets/frontend/new/images/open-graph-image.png') . '" />' . PHP_EOL;
-    // echo '<meta property="og:type" content="' . ($this->getTemplateId() == 1 ? 'website' : 'article') . '" />' . PHP_EOL;
     echo '<meta property="og:type" content="website" />' . PHP_EOL;
     // echo '<meta name="twitter:image" content="https://disch.dev/theme/public/assets/frontend/new/images/open-graph-image.png?v=' . filemtime('theme/public/assets/frontend/new/images/open-graph-image.png') . '" />' . PHP_EOL;
     echo '<meta name="twitter:card" content="summary_large_image" />' . PHP_EOL;
@@ -66,9 +66,9 @@ if($this->getArticleId() != 25 && !rex::getUser()) {
     <link rel="icon" href="/theme/public/assets/frontend/new/images/favicon/favicon-32x32.png?v=<?php echo filemtime('theme/public/assets/frontend/new/images/favicon/favicon-32x32.png'); ?>" sizes="32x32" type="image/png" />
     <link rel="icon" href="/theme/public/assets/frontend/new/images/favicon/favicon-16x16.png?v=<?php echo filemtime('theme/public/assets/frontend/new/images/favicon/favicon-16x16.png'); ?>" sizes="16x16" type="image/png" />
     <link rel="manifest" href="/theme/public/assets/frontend/new/images/favicon/site.webmanifest?v=<?php echo filemtime('theme/public/assets/frontend/new/images/favicon/site.webmanifest'); ?>" />
-    <link rel="mask-icon" href="/theme/public/assets/frontend/new/images/favicon/safari-pinned-tab.svg?v=<?php echo filemtime('theme/public/assets/frontend/new/images/favicon/safari-pinned-tab.svg'); ?>" color="#7156ee" />
-    <meta name="msapplication-TileColor" content="#7156ee" />
-    <meta name="theme-color" content="#000000" />
+    <link rel="mask-icon" href="/theme/public/assets/frontend/new/images/favicon/safari-pinned-tab.svg?v=<?php echo filemtime('theme/public/assets/frontend/new/images/favicon/safari-pinned-tab.svg'); ?>" color="#9d1438" />
+    <meta name="msapplication-TileColor" content="#9d1438" />
+    <meta name="theme-color" content="#9d1438" />
 
     <link rel="stylesheet" href="/theme/public/assets/frontend/new/css/frontend.css?v=<?php echo filemtime('theme/public/assets/frontend/new/css/frontend.css'); ?>" media="screen" />
 </head>

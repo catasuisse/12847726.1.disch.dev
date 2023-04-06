@@ -1,6 +1,6 @@
 {
-    "name": "Dischdev",
-    "short_name": "Dischdev",
+    "name": "Steinhofhalde",
+    "short_name": "Steinhofhalde",
     "icons": [
         {
             "src": "/android-chrome-192x192.png",
@@ -13,7 +13,7 @@
             "type": "image/png"
         }
     ],
-    "theme_color": "#000000",
-    "background_color": "#000000",
+    "theme_color": "#9d1438",
+    "background_color": "#9d1438",
     "display": "standalone"
 }

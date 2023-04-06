@@ -1343,6 +1343,67 @@ video {
     }
 }
 
+
+
+.dd-cookies {
+    @extend .dd-fs-2xs;
+
+    background-color: rgba(dd-f-color('foreground'), .875);
+    backdrop-filter: blur(1rem);
+    bottom: 0;
+    color: dd-f-color('background');
+    left: 0;
+    padding: 1rem 2rem;
+    position: fixed;
+    width: 100%;
+    z-index: 9999999;
+
+    @media(min-width: dd-f-min-breakpoint('md')) {
+        padding-left: 4rem;
+        padding-right: 4rem;
+    }
+
+    a {
+        color: dd-f-color('background') !important;
+
+        &:visited {
+            color: dd-f-color('background') !important;
+        }
+
+        &:hover {
+            @media(min-width: dd-f-min-breakpoint('xl')) {
+                color: dd-f-color('background') !important;
+            }
+        }
+
+        &[data-confirm] {
+            color: dd-f-color('background') !important;
+            display: block;
+            margin-top: .75rem;
+
+            @media(min-width: dd-f-min-breakpoint('sm')) {
+                margin-left: 1.5rem;
+                margin-top: 0;
+                display: inline-block;
+            }
+
+            &:visited {
+                color: dd-f-color('background') !important;
+            }
+
+            &:hover {
+                @media(min-width: dd-f-min-breakpoint('xl')) {
+                    color: dd-f-color('background') !important;
+                }
+            }
+        }
+    }
+
+    &.dd-hidden {
+        display: none;
+    }
+}
+
 .dd-cursor-shape {
     background-color: rgba(dd-f-color('accent'), .125);
     border-radius: 999999px;
@@ -2147,12 +2208,18 @@ video {
         padding: 2rem;
         position: fixed;
         top: 0;
-        transform:
-            translate3d(0, 0, 0);
         transition:
             color .25s,
             opacity 1s;
         z-index: 999999;
+
+        @media(min-width: dd-f-min-breakpoint('lg')) {
+            padding-bottom: 1.5rem;
+            padding-top: 1.5rem;
+            top: .25rem;
+            transform:
+                translate3d(0, -5%, 0);
+        }
 
         a,
         [data-fancybox],
@@ -2162,23 +2229,61 @@ video {
             padding: 2rem;
             transition:
                 transform .25s;
-
-            &:hover {
-                @media(min-width: dd-f-min-breakpoint('xl')) {
-                    transform:
-                        scale(1.125);
-                }
+            
+            @media(min-width: dd-f-min-breakpoint('lg')) {
+                margin-bottom: -1.5rem;
+                margin-top: -1.5rem;
+                padding-bottom: 1.5rem;
+                padding-top: 1.5rem;
             }
+
+            // &:hover {
+            //     @media(min-width: dd-f-min-breakpoint('xl')) {
+            //         transform:
+            //             scale(1.125);
+            //     }
+            // }
         }
 
         .dd-logo {
             height: 4rem;
-            width: 4rem;
+            width: 4rem * 1.784136;
+
+            @media(min-width: dd-f-min-breakpoint('lg')) {
+                height: calc(.875rem * 1.5 + 6rem - 3rem);
+                width: calc((.875rem * 1.5 + 6rem - 3rem) * 1.784136);
+            }
+
+            &-part-1,
+            &-part-2 {
+                fill: dd-f-color('accent');
+                transition:
+                    fill .25s;
+
+                @media(min-width: dd-f-min-breakpoint('lg')) {
+                    fill: dd-f-color('background');
+                }
+            }
+
+            &-part-1 {
+                opacity: .25;
+            }
         }
 
         &.dd-hidden {
             opacity: 0;
             pointer-events: none;
+        }
+
+        &.dd-nav-visible {
+            .dd-logo {
+                &-part-1,
+                &-part-2 {
+                    @media(max-width: dd-f-min-breakpoint('lg')) {
+                        fill: dd-f-color('background');
+                    }
+                }
+            }
         }
     }
 
@@ -2269,12 +2374,12 @@ video {
     width: calc(100% - 4rem);
     z-index: 999998;
 
-    @media(min-width: dd-f-min-breakpoint('md')) {
+    @media(min-width: dd-f-min-breakpoint('lg')) {
         padding-left: 3.34375rem;
         padding-right: 3.34375rem;
     }
 
-    @media(max-width: dd-f-max-breakpoint('md')) {
+    @media(max-width: dd-f-max-breakpoint('lg')) {
         background-color: dd-f-color('foreground');
         color: dd-f-color('background');
         flex-direction: column;
@@ -2305,12 +2410,12 @@ video {
         padding: 0;
         pointer-events: auto;
 
-        @media(min-width: dd-f-min-breakpoint('md')) {
+        @media(min-width: dd-f-min-breakpoint('lg')) {
             font-size: .875rem;
             letter-spacing: $dd-letter-spacing;
         }
 
-        @media(max-width: dd-f-max-breakpoint('md')) {
+        @media(max-width: dd-f-max-breakpoint('lg')) {
             flex-direction: column;
             margin: 0;
             pointer-events: none;
@@ -2360,7 +2465,7 @@ video {
                 padding: 1.5rem 2rem;
                 position: relative;
 
-                @media(max-width: dd-f-max-breakpoint('md')) {
+                @media(max-width: dd-f-max-breakpoint('lg')) {
                     padding-bottom: .75rem;
                     padding-top: .75rem;
                 }
@@ -2382,7 +2487,7 @@ video {
                             transform .25s;
                         width: calc(100% + 4rem);
 
-                        @media(max-width: dd-f-max-breakpoint('md')) {
+                        @media(max-width: dd-f-max-breakpoint('lg')) {
                             height: calc(100% + 1.5rem);
                             margin-bottom: -.75rem;
                             margin-top: -.75rem;
@@ -2429,7 +2534,7 @@ video {
                 }
 
                 &::after {
-                    @media(min-width: dd-f-min-breakpoint('md')) {
+                    @media(min-width: dd-f-min-breakpoint('lg')) {
                         background-color: dd-f-color('background');
                         content: '';
                         display: flex;
@@ -2459,12 +2564,12 @@ video {
                         a,
                         [data-fancybox],
                         [data-href] {
-                            @media(min-width: dd-f-min-breakpoint('md')) {
+                            @media(min-width: dd-f-min-breakpoint('lg')) {
                                 transform:
                                     scale(1.25);
                             }
 
-                            @media(max-width: dd-f-min-breakpoint('md')) {
+                            @media(max-width: dd-f-min-breakpoint('lg')) {
                                 background-color: rgba(dd-f-color('background'), .0625);
                             }
                         }
@@ -2479,7 +2584,7 @@ video {
                 + {
                     li {
                         &::before {
-                            @media(min-width: dd-f-min-breakpoint('md')) {
+                            @media(min-width: dd-f-min-breakpoint('lg')) {
                                 background-color: rgba(dd-f-color('background'), .125);
                                 content: '';
                                 display: flex;
@@ -2514,13 +2619,13 @@ video {
     }
 
     &.dd-visible {
-        @media(max-width: dd-f-max-breakpoint('md')) {
+        @media(max-width: dd-f-max-breakpoint('lg')) {
             opacity: 1;
             pointer-events: auto;
         }
 
         .dd-nav-primary {
-            @media(max-width: dd-f-max-breakpoint('md')) {
+            @media(max-width: dd-f-max-breakpoint('lg')) {
                 pointer-events: auto;
             }
         }
@@ -2585,18 +2690,18 @@ video {
     border-radius: 999999px;
     cursor: pointer;
     display: none;
-    height: 2rem + 3rem;
-    padding: 1.5rem;
+    height: 4rem;
+    padding: 1rem;
     pointer-events: auto;
     position: fixed;
-    right: 1.5rem;
-    top: 1.5rem;
+    right: 2rem;
+    top: 2rem;
     transition:
         background-color .25s;
-    width: 2rem + 3rem;
+    width: 4rem;
     z-index: 9999999;
 
-    @media(max-width: dd-f-max-breakpoint('md')) {
+    @media(max-width: dd-f-max-breakpoint('lg')) {
         display: flex;
     }
 
@@ -3782,7 +3887,7 @@ h3 {
 }
 
 .dd-section-hero {
-    height: calc(100vh - (1.5rem + .875rem * 1.5 * .5) * 2);
+    height: calc(100vh - 6rem);
     margin-top: -6rem;
     min-height: 0;
     overflow: hidden;
@@ -3938,8 +4043,10 @@ h3 {
 }
 
 .dd-section-lead {
-    font-size: 1.25rem;
-    letter-spacing: $dd-letter-spacing;
+    @media(min-width: dd-f-min-breakpoint('md')) {
+        font-size: 1.25rem;
+        letter-spacing: $dd-letter-spacing;
+    }
 
     h1,
     h2,

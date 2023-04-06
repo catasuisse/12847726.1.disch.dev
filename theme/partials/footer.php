@@ -62,3 +62,7 @@
         </div>
     </div>
 </footer>
+
+<div class="dd-cookies dd-hidden">
+    <p>Auf dieser Website werden Cookies eingesetzt. Weitere Informationen finden Sie unter «<a href="<?php echo rex_getUrl(29); ?>">Rechtliches</a>». <a href="javascript:;" data-confirm>Akzeptieren</a></p>
+</div>
