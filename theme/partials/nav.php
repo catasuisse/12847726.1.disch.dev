@@ -19,3 +19,7 @@ if($this->getTemplateId() != 1 && class_exists('Url\Url') && Url\Url::resolveCur
         <?php dd_part()->nav($categories); ?>
     </ul>
 </nav>
+
+<div id="dd-nav-toggler" class="dd-nav-toggler">
+    <div id="dd-nav-toggler-icon" class="dd-nav-toggler-icon"></div>
+</div>

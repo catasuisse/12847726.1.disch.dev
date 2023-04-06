@@ -123,6 +123,17 @@ document.addEventListener('DOMContentLoaded', function(event) {
         ––––––––––––––––––––––––––––––––––––––––––––––––––
         */
 
+        $('#dd-nav-toggler').click(function() {
+            if($(window).width() < 768) {
+                $('#dd-nav-primary-wrapper').toggleClass('dd-visible');
+                $('#dd-nav-toggler').toggleClass('dd-active');
+            }
+        });
+
+        /*
+        ––––––––––––––––––––––––––––––––––––––––––––––––––
+        */
+
         $('.dd-checkbox-wrapper.dd-active').each(function() {
             $(this)
                 .closest('form')
@@ -540,11 +551,16 @@ document.addEventListener('DOMContentLoaded', function(event) {
                 var error = false;
     
                 fields['article'] = $this.find('[name="article"]');
-                fields['callname'] = $this.find('[name="callname"]');
+                fields['city'] = $this.find('[name="city"]');
                 fields['content'] = $this.find('[name="content"]');
                 fields['email'] = $this.find('[name="email"]');
+                fields['firstname'] = $this.find('[name="firstname"]');
                 fields['honeypot'] = $this.find('[name="honeypot"]');
+                fields['lastname'] = $this.find('[name="lastname"]');
+                fields['postal_code'] = $this.find('[name="postal_code"]');
                 fields['referer'] = $this.find('[name="referer"]');
+                fields['street'] = $this.find('[name="street"]');
+                fields['telephone'] = $this.find('[name="telephone"]');
     
                 $this
                     .find('.dd-form-group')
@@ -554,7 +570,7 @@ document.addEventListener('DOMContentLoaded', function(event) {
                     .empty()
                     .hide();
                 
-                fields['callname']
+                fields['city']
                     .closest('.dd-form-group')
                     .find('.dd-alert')
                     .text('–');
@@ -568,6 +584,31 @@ document.addEventListener('DOMContentLoaded', function(event) {
                     .closest('.dd-form-group')
                     .find('.dd-alert')
                     .text('–');
+                
+                fields['firstname']
+                    .closest('.dd-form-group')
+                    .find('.dd-alert')
+                    .text('–');
+                
+                fields['lastname']
+                    .closest('.dd-form-group')
+                    .find('.dd-alert')
+                    .text('–');
+                
+                fields['postal_code']
+                    .closest('.dd-form-group')
+                    .find('.dd-alert')
+                    .text('–');
+                
+                fields['street']
+                    .closest('.dd-form-group')
+                    .find('.dd-alert')
+                    .text('–');
+                
+                fields['telephone']
+                    .closest('.dd-form-group')
+                    .find('.dd-alert')
+                    .text('–');
     
                 scroll.update();
     
@@ -575,16 +616,6 @@ document.addEventListener('DOMContentLoaded', function(event) {
                     duration: 250,
                     offset: -250,
                 });
-    
-                if(!fields['callname'].val()) {
-                    error = true;
-    
-                    fields['callname']
-                        .closest('.dd-form-group')
-                        .addClass('dd-invalid')
-                        .find('.dd-alert')
-                        .text('Diese Angabe wird benötigt.')
-                }
     
                 if(!fields['content'].val()) {
                     error = true;
@@ -618,13 +649,43 @@ document.addEventListener('DOMContentLoaded', function(event) {
                         .text('Diese Angabe wird benötigt.')
                 }
     
+                if(!fields['firstname'].val()) {
+                    error = true;
+    
+                    fields['firstname']
+                        .closest('.dd-form-group')
+                        .addClass('dd-invalid')
+                        .find('.dd-alert')
+                        .text('Diese Angabe wird benötigt.')
+                }
+    
+                if(!fields['lastname'].val()) {
+                    error = true;
+    
+                    fields['lastname']
+                        .closest('.dd-form-group')
+                        .addClass('dd-invalid')
+                        .find('.dd-alert')
+                        .text('Diese Angabe wird benötigt.')
+                }
+    
+                if(!fields['telephone'].val()) {
+                    error = true;
+    
+                    fields['telephone']
+                        .closest('.dd-form-group')
+                        .addClass('dd-invalid')
+                        .find('.dd-alert')
+                        .text('Diese Angabe wird benötigt.')
+                }
+    
                 if(error) {
                     return false;
                 }
     
                 alerts
                     .empty()
-                    .append('<li class="dd-alert-flash">Deine Angaben werden geprüft ...</li>')
+                    .append('<li class="dd-alert-flash">Ihre Angaben werden geprüft ...</li>')
                     .show()
                     .nextAll()
                     .hide();
@@ -634,11 +695,16 @@ document.addEventListener('DOMContentLoaded', function(event) {
                 $.ajax({ url: '/theme/ajax/form-contact.php', type: 'POST', data: {
     
                     article: fields['article'].val(),
-                    callname: fields['callname'].val(),
+                    city: fields['city'].val(),
                     content: fields['content'].val(),
                     email: fields['email'].val(),
+                    firstname: fields['firstname'].val(),
                     honeypot: fields['honeypot'].val(),
-                    referer: fields['referer'].val()
+                    lastname: fields['lastname'].val(),
+                    postal_code: fields['postal_code'].val(),
+                    referer: fields['referer'].val(),
+                    street: fields['street'].val(),
+                    telephone: fields['telephone'].val()
     
                 }, success: function(data) {
     
@@ -864,5 +930,10 @@ document.addEventListener('DOMContentLoaded', function(event) {
         timer[3] = setTimeout(function() {
             $('body').removeClass('dd-resizing');
         }, 250);
+
+        if($(window).width() >= 768) {
+            $('#dd-nav-primary-wrapper').removeClass('dd-visible');
+            $('#dd-nav-toggler').removeClass('dd-active');
+        }
     });
 });

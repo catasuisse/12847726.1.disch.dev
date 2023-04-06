@@ -24,7 +24,7 @@
                 </div>
 
                 <p class="dd-fs-sm" style="
-                    margin-bottom: .5em;
+                    margin-bottom: 1em;
                 ">
                     Stadelmann und Partner Immobilien<br />
                     Rothusstrasse 23<br />
@@ -32,14 +32,14 @@
                 </p>
 
                 <p class="dd-fs-sm" style="
-                    margin-bottom: .5em;
+                    margin-bottom: 1em;
                 ">
                     <a href="mailto:info@stadelmannpartner.ch">info@stadelmannpartner.ch</a><br />
                     <a href="tel:+41415080707">+41 41 508 07 07</a>
                 </p>
 
                 <p class="dd-fs-sm" style="
-                    margin-bottom: .5em;
+                    margin-bottom: 1em;
                 ">
                     <a href="https://stadelmannpartner.ch" target="_blank">www.stadelmannpartner.ch</a>
                 </p>
@@ -56,8 +56,7 @@
 
                 <ul id="dd-legal" class="dd-legal">
                     <li><a href="https://www.disch.dev" title="Website von Disch Development in Malans (bei Landquart)">Webdesign:<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 73.467567 100" width="73.467567" height="100" fill="currentColor" data-title=""><title>Webdesign und -Entwicklung: Disch Development in Malans (bei Landquart)</title><path d="M15.49552,21.242952l3.586437,3.586437L0.206366,21.074915C0.066335,21.775103,0,22.472338,0,23.159256 c0,4.96323,3.497987,9.400204,8.551135,10.405529l12.206849,2.427811c-2.358526,2.685768-4.069941,6.002449-4.836453,9.75103 c-2.352633,11.511089,5.14453,22.79958,16.667404,25.090305c11.50666,2.289238,22.69051-5.182869,24.979748-16.689529 c0.754726-3.794277,0.448116-7.554657-0.7164-10.971569c-2.362953-6.944386-8.263687-12.47366-15.974594-14.008171 l-15.249352-3.033657L36.736996,15.02087l6.222092,6.222082c2.074032,2.07403,4.792233,3.111788,7.510437,3.111788 c2.718201,0,5.436401-1.037758,7.510426-3.111788L36.736996,0L15.49552,21.242952z M38.715206,39.565765 c5.834408,1.108501,9.624271,6.779285,8.417,12.594532c-1.170422,5.645721-6.711487,9.350082-12.376373,8.275471 c-5.837349-1.107025-9.630152-6.78223-8.421413-12.597473C27.50779,42.191097,33.048855,38.488213,38.715206,39.565765z M36.737545,100L15.494884,78.757339l0.000008-0.000008c4.147923-4.147926,10.873035-4.147926,15.02096,0l6.221693,6.221695 l13.73217-13.73217l7.510487,7.510483L36.737545,100z M58.918404,32.753075l5.996552,1.194 c5.054619,1.005325,8.552612,5.442299,8.552612,10.405529c0,0.68692-0.06781,1.384155-0.206375,2.082874l-6.087944-1.21022 c-5.731224-1.139462-9.441479-6.727699-8.259274-12.450077C58.916927,32.760445,58.918404,32.753075,58.918404,32.753075z"></path></svg>Disch Development</a></li>
-                    <li><a href="/datenschutz/">Datenschutz</a></li>
-                    <li><a href="/impressum/">Impressum</a></li>
+                    <li><a href="<?= rex_getUrl(29) ?>">Rechtliches</a></li>
                 </ul>
             </div>
         </div>

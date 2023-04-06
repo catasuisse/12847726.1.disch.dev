@@ -13,9 +13,9 @@ $label = 'REX_VALUE[3]';
                     $imageTitle = !is_null($imageTitle) ? $imageTitle->getTitle() : null;
                     ?>
 
-                    <div class="dd-image-wrapper">
+                    <a class="dd-image-wrapper" href="<?php echo rex_media_manager::getUrl('dd_original_2400', 'REX_MEDIA[1]'); ?>" data-fancybox="dd-image">
                         <img class="lazy" src="/media/REX_MEDIA[1]" alt="<?php echo $imageTitle; ?>" />
-                    </div>
+                    </a>
 
                     <?php
                 }

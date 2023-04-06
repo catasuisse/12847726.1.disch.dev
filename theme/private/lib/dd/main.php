@@ -206,7 +206,7 @@ class dd
             ) {
                 $mail->addReplyTo($from[0]);
             } else {
-                $mail->addReplyTo('help@disch.dev', 'Disch Development');
+                $mail->addReplyTo('info@stadelmannpartner.ch', 'Stadelmann und Partner Immobilien');
             }
 
             $mail->send();
@@ -214,7 +214,7 @@ class dd
             if($copy) {
                 $mail = new rex_mailer();
 
-                $mail->addAddress('help@disch.dev');
+                $mail->addAddress('info@stadelmannpartner.ch');
                 $mail->Body = dd_part::mail($message, $footer, 'admin');
                 $mail->CharSet = 'UTF-8';
                 $mail->isHTML(true);
@@ -229,7 +229,7 @@ class dd
                 ) {
                     $mail->addReplyTo($from[0], $from[1]);
                 } else {
-                    $mail->addReplyTo('help@disch.dev', 'Disch Development');
+                    $mail->addReplyTo('info@stadelmannpartner.ch', 'Stadelmann und Partner Immobilien');
                 }
 
                 $mail->send();

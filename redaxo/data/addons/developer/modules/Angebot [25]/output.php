@@ -11,7 +11,6 @@
                     <th>Loggia</th>
                     <th>Preis</th>
                     <th>Status</th>
-                    <th></th>
                 </tr>
             </thead>
             <tbody>
@@ -30,7 +29,7 @@
                 }
                 */
                 ?>
-                <tr data-fancybox data-src="/media/Grundriss-UG-Steinhofhalde-Kriens.pdf">
+                <tr data-fancybox data-src="/media/grundriss-ug-steinhofhalde-kriens.pdf">
                     <td>Garten</td>
                     <td>UG</td>
                     <td>4.5</td>
@@ -39,9 +38,8 @@
                     <td>75.0 m<sup>2</sup></td>
                     <td>–</td>
                     <td>frei</td>
-                    <td>&nbsp;</td>
                 </tr>
-                <tr data-fancybox data-src="/media/Grundriss-EG-Steinhofhalde-Kriens.pdf">
+                <tr data-fancybox data-src="/media/grundriss-eg-steinhofhalde-kriens.pdf">
                     <td>West</td>
                     <td>EG</td>
                     <td>3.5</td>
@@ -50,9 +48,8 @@
                     <td>–</td>
                     <td>–</td>
                     <td>frei</td>
-                    <td>&nbsp;</td>
                 </tr>
-                <tr data-fancybox data-src="/media/Grundriss-EG-Steinhofhalde-Kriens.pdf">
+                <tr data-fancybox data-src="/media/grundriss-eg-steinhofhalde-kriens.pdf">
                     <td>Ost</td>
                     <td>EG</td>
                     <td>3.5</td>
@@ -61,9 +58,8 @@
                     <td>–</td>
                     <td>–</td>
                     <td>frei</td>
-                    <td>&nbsp;</td>
                 </tr>
-                <tr data-fancybox data-src="/media/Grundriss-OG-Steinhofhalde-Kriens.pdf">
+                <tr data-fancybox data-src="/media/grundriss-og-steinhofhalde-kriens.pdf">
                     <td>Attika</td>
                     <td>OG</td>
                     <td>3.5</td>
@@ -72,7 +68,6 @@
                     <td>–</td>
                     <td>–</td>
                     <td>frei</td>
-                    <td>&nbsp;</td>
                 </tr>
             </tbody>
         </table>

@@ -440,10 +440,18 @@ class dd_part
 
                 <form>
                     <div class="dd-form-row">
-                        <div class="dd-col-12">
+                        <div class="dd-col-12 dd-col-lg-6">
                             <div class="dd-form-group">
-                                <label>Was möchtest du mir erzählen?</label>
-                                <textarea name="content" rows="6" autocomplete="off"></textarea>
+                                <label>Nachname <sup>*</sup></label>
+                                <input name="lastname" type="text" autocomplete="off" />
+                                <div class="dd-alert">–</div>
+                            </div>
+                        </div>
+
+                        <div class="dd-col-12 dd-col-lg-6">
+                            <div class="dd-form-group">
+                                <label>Vorname <sup>*</sup></label>
+                                <input name="firstname" type="text" autocomplete="off" />
                                 <div class="dd-alert">–</div>
                             </div>
                         </div>
@@ -452,7 +460,7 @@ class dd_part
                     <div class="dd-form-row">
                         <div class="dd-col-12 dd-col-lg-6">
                             <div class="dd-form-group">
-                                <label>Wie lautet deine E-Mail-Adresse?</label>
+                                <label>E-Mail <sup>*</sup></label>
                                 <input name="email" type="email" autocomplete="off" />
                                 <div class="dd-alert">–</div>
                             </div>
@@ -460,8 +468,46 @@ class dd_part
 
                         <div class="dd-col-12 dd-col-lg-6">
                             <div class="dd-form-group">
-                                <label>Wie darf ich dich ansprechen?</label>
-                                <input name="callname" type="text" autocomplete="off" />
+                                <label>Telefon <sup>*</sup></label>
+                                <input name="telephone" type="text" autocomplete="off" />
+                                <div class="dd-alert">–</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dd-form-row">
+                        <div class="dd-col-12">
+                            <div class="dd-form-group">
+                                <label>Strasse und Hausnummer</label>
+                                <input name="street" type="text" autocomplete="off" />
+                                <div class="dd-alert">–</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dd-form-row">
+                        <div class="dd-col-12 dd-col-lg-6">
+                            <div class="dd-form-group">
+                                <label>Postleitzahl</label>
+                                <input name="postal_code" type="text" autocomplete="off" />
+                                <div class="dd-alert">–</div>
+                            </div>
+                        </div>
+
+                        <div class="dd-col-12 dd-col-lg-6">
+                            <div class="dd-form-group">
+                                <label>Ort</label>
+                                <input name="city" type="text" autocomplete="off" />
+                                <div class="dd-alert">–</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dd-form-row">
+                        <div class="dd-col-12">
+                            <div class="dd-form-group">
+                                <label>Nachricht <sup>*</sup></label>
+                                <textarea name="content" rows="6" autocomplete="off"></textarea>
                                 <div class="dd-alert">–</div>
                             </div>
                         </div>
@@ -473,7 +519,7 @@ class dd_part
 
                     <ul class="dd-call-to-actions">
                         <?php echo '<li>' . dd_part::callToAction(
-                            'Senden',
+                            'Nachricht senden',
                             'javascript:;',
                             'data-action="submit"'
                         ) . '</li>'; ?>

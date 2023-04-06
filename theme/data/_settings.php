@@ -24,7 +24,7 @@ $_SETTINGS = [
 
         'country_code' => 'CH',
 
-        'email' => 'help@disch.dev',
+        'email' => 'info@stadelmannpartner.ch',
 
         'facebook' => 'https://www.facebook.com/dischdev',
 
@@ -61,16 +61,15 @@ $_SETTINGS = [
         'signature' => '
 
             <p>
-                Liebe Grüsse<br />
-                Maik<br />
+                Freundliche Grüsse<br />
+                Stadelmann und Partner Immobilien<br />
             </p>
 
             <p>
                 ––<br />
-                <b>Disch Development</b><br />
-                Maik Disch<br />
-                maik@disch.dev<br />
-                081 511 05 13
+                <b>Stadelmann und Partner Immobilien</b><br />
+                info@stadelmannpartner.ch<br />
+                +41 41 508 07 07
             </p>
 
         ',

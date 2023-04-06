@@ -55,10 +55,10 @@ if($this->getArticleId() != 25 && !rex::getUser()) {
     }
 
     echo '<meta property="fb:app_id" content="966242223397117" />' . PHP_EOL;
-    echo '<meta property="og:image" content="https://disch.dev/theme/public/assets/frontend/new/images/open-graph-image.png?v=' . filemtime('theme/public/assets/frontend/new/images/open-graph-image.png') . '" />' . PHP_EOL;
+    // echo '<meta property="og:image" content="https://disch.dev/theme/public/assets/frontend/new/images/open-graph-image.png?v=' . filemtime('theme/public/assets/frontend/new/images/open-graph-image.png') . '" />' . PHP_EOL;
     // echo '<meta property="og:type" content="' . ($this->getTemplateId() == 1 ? 'website' : 'article') . '" />' . PHP_EOL;
     echo '<meta property="og:type" content="website" />' . PHP_EOL;
-    echo '<meta name="twitter:image" content="https://disch.dev/theme/public/assets/frontend/new/images/open-graph-image.png?v=' . filemtime('theme/public/assets/frontend/new/images/open-graph-image.png') . '" />' . PHP_EOL;
+    // echo '<meta name="twitter:image" content="https://disch.dev/theme/public/assets/frontend/new/images/open-graph-image.png?v=' . filemtime('theme/public/assets/frontend/new/images/open-graph-image.png') . '" />' . PHP_EOL;
     echo '<meta name="twitter:card" content="summary_large_image" />' . PHP_EOL;
 	?>
 

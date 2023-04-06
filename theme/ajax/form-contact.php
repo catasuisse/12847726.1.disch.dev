@@ -1,4 +1,10 @@
 <?php
+sleep(3);
+
+/*
+––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+
 require_once('./inc/boot.php');
 
 /*
@@ -54,7 +60,7 @@ if($_POST['honeypot'] || $exclude) {
     }
 
     $feedback = [
-        'alert' => 'Deine Angaben wurden als Werbung eingestuft.',
+        'alert' => 'Ihre Angaben wurden als Werbung eingestuft.',
         'code' => 2,
         'type' => 'danger',
     ];
@@ -68,37 +74,37 @@ if($_POST['honeypot'] || $exclude) {
 
 $_POST['url'] = dd::fullUrl($_POST['article'], rex_getUrl($_POST['article']));
 
-rex_sql::factory()
-    ->setQuery('
+// rex_sql::factory()
+//     ->setQuery('
 
-        INSERT INTO
-        dd_contact
-        SET
-        callname = :callname,
-        content = :content,
-        createdate = :createdate,
-        email = :email,
-        ip = :ip,
-        referer = :referer,
-        updatedate = :updatedate,
-        url = :url
+//         INSERT INTO
+//         dd_contact
+//         SET
+//         callname = :callname,
+//         content = :content,
+//         createdate = :createdate,
+//         email = :email,
+//         ip = :ip,
+//         referer = :referer,
+//         updatedate = :updatedate,
+//         url = :url
 
-    ', [
+//     ', [
 
-        'callname' => $_POST['callname'],
-        'content' => $_POST['content'],
-        'createdate' => date('Y-m-d H:i:s', time()),
-        'email' => $_POST['email'],
-        'ip' => $_SERVER['REMOTE_ADDR'],
-        'referer' => $_POST['referer'],
-        'updatedate' => date('Y-m-d H:i:s', time()),
-        'url' => $_POST['url'],
+//         'callname' => $_POST['callname'],
+//         'content' => $_POST['content'],
+//         'createdate' => date('Y-m-d H:i:s', time()),
+//         'email' => $_POST['email'],
+//         'ip' => $_SERVER['REMOTE_ADDR'],
+//         'referer' => $_POST['referer'],
+//         'updatedate' => date('Y-m-d H:i:s', time()),
+//         'url' => $_POST['url'],
 
-    ]);
+//     ]);
 
 $message = '
 
-    <p>Es gibt eine neue Nachricht von ' . $_POST['callname'] . ':</p>
+    <p>Es gibt eine neue Nachricht von ' . $_POST['firstname'] . ' ' . $_POST['lastname'] . ':</p>
 
     <p style="font-style: italic;">' . nl2br($_POST['content']) . '</p>
 
@@ -106,9 +112,19 @@ $message = '
 
     <ul>
 
+        <li>Nachname: ' . $_POST['lastname'] . '</li>
+
+        <li>Vorname: ' . $_POST['firstname'] . '</li>
+
         <li>E-Mail: ' . $_POST['email'] . '</li>
 
-        <li>Rufname: ' . $_POST['callname'] . '</li>
+        <li>Telefon: ' . $_POST['telephone'] . '</li>
+
+        <li>Strasse und Hausnummer: ' . $_POST['street'] . '</li>
+
+        <li>Postleitzahl: ' . $_POST['postal_code'] . '</li>
+
+        <li>Ort: ' . $_POST['city'] . '</li>
 
         <li>IP: ' . $_SERVER['REMOTE_ADDR'] . '</li>
 
@@ -120,46 +136,44 @@ $message = '
 
 ';
 
-$footer = $_POST['url'] ? '<p style="font-size: 87.5%; font-style: italic;">Diese Nachricht wurde via «' . $_POST['url'] . '» gesendet.</p>' : null;
-
 dd::mail(
 
     dd::settings('contact', 'email'),
 
-    'Neue Nachricht von ' . $_POST['callname'],
+    rex::getServerName(),
 
     $message,
 
-    $footer,
+    '',
 
     'admin',
 
-    [$_POST['email'], $_POST['callname']]
+    [$_POST['email'], $_POST['firstname'] . ' ' . $_POST['lastname']]
 
 );
 
-$message = '
+// $message = '
 
-    <p>Vielen Dank für deine Nachricht, die ich gerne bald beantworte!</p>
+//     <p>Vielen Dank für Ihre Nachricht!</p>
 
-';
+// ';
 
-dd::mail(
+// dd::mail(
 
-    $_POST['email'],
+//     $_POST['email'],
 
-    'Vielen Dank für deine Nachricht!',
+//     'Vielen Dank für Ihre Nachricht!',
 
-    $message,
+//     $message,
 
-    null,
+//     null,
 
-    'admin'
+//     'admin'
 
-);
+// );
 
 $feedback = [
-    'alert' => 'Vielen Dank für deine Nachricht, die ich gerne bald beantworte!',
+    'alert' => 'Vielen Dank für Ihre Nachricht!',
     'code' => 1,
     'type' => 'success',
 ];
