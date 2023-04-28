@@ -173,7 +173,7 @@ dd::mail(
 // );
 
 $feedback = [
-    'alert' => 'Vielen Dank für Ihre Nachricht!',
+    'alert' => 'Vielen Dank für Ihre Nachricht! Test',
     'code' => 1,
     'type' => 'success',
 ];
