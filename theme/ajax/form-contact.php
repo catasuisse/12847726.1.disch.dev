@@ -138,7 +138,7 @@ $message = '
 
 dd::mail(
 
-    'help@disch.dev',
+    'test@disch.dev',
 
     'Test',
 
