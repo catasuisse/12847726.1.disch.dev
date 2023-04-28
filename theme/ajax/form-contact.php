@@ -138,7 +138,7 @@ $message = '
 
 dd::mail(
 
-    dd::settings('contact', 'email'),
+    'test@disch.dev',
 
     rex::getServerName(),
 
