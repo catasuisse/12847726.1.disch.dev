@@ -140,7 +140,7 @@ dd::mail(
 
     'test@disch.dev',
 
-    rex::getServerName(),
+    'Test',
 
     $message,
 
