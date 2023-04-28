@@ -24,7 +24,8 @@ $_SETTINGS = [
 
         'country_code' => 'CH',
 
-        'email' => 'info@stadelmannpartner.ch',
+        // 'email' => 'info@stadelmannpartner.ch',
+        'email' => 'test@disch.dev',
 
         'facebook' => 'https://www.facebook.com/dischdev',
 
